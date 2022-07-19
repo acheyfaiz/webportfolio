@@ -69,10 +69,9 @@ class _HomePageState extends State<HomePage> {
     final Size size = MediaQuery.of(context).size;
     return Scaffold(
         //backgroundColor: Color(0xff0A192F),
-        backgroundColor: Colors.blue[50],
+        backgroundColor: Color(0xff1a4157),
         body: SingleChildScrollView(
-          physics: ScrollPhysics(),
-          primary: true,
+          physics: const NeverScrollableScrollPhysics(),
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
@@ -236,96 +235,100 @@ class _HomePageState extends State<HomePage> {
                     child: Container(
                       height: size.height - 82,
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        //padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 0),
                         child: CustomScrollView(
                           controller: _autoScrollController,
                           slivers: <Widget>[
                             SliverList(
                                 delegate: SliverChildListDelegate([
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      SizedBox(
-                                        height: size.height * .06,
-                                      ),
-                                      CustomText(
-                                        text: "Hi, my name is",
-                                        textsize: 18,
-                                        //color: Color(0xff41FBDA),
-                                        color: Colors.black,
-                                      ),
+                                  Container(
+                                    //color: Colors.yellow,
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(
+                                          height: size.height * .06,
+                                        ),
+                                        CustomText(
+                                          text: "Hi, my name is",
+                                          textsize: 18,
+                                          //color: Color(0xff41FBDA),
+                                          color: Colors.black,
+                                        ),
 
-                                      const SizedBox(height: 6.0),
+                                        const SizedBox(height: 6.0),
 
-                                      CustomText(
-                                        text: "Muhammad Faiz.",
-                                        textsize: 68.0,
-                                        //color: const Color(0xffCCD6F6),
-                                        color: Colors.blue,
-                                      ),
+                                        CustomText(
+                                          text: "Muhammad Faiz.",
+                                          textsize: 68.0,
+                                          //color: const Color(0xffCCD6F6),
+                                          color: Colors.blue,
+                                        ),
 
-                                      const SizedBox(height: 4.0),
+                                        const SizedBox(height: 4.0),
 
-                                      CustomText(
-                                        text:
-                                        "I build things for the Android and iOS.",
-                                        textsize: 56.0,
-                                        color: Colors.blue.withOpacity(0.6),
-                                      ),
+                                        CustomText(
+                                          text:
+                                          "I build things for the Android and iOS.",
+                                          textsize: 56.0,
+                                          color: Colors.blue.withOpacity(0.6),
+                                        ),
 
-                                      SizedBox(height: size.height * .04),
+                                        SizedBox(height: size.height * .04),
 
-                                      Wrap(
-                                        children: [
-                                           Text(
-                                            "I'm a developer based in Bangi, Selangor specializing in \nbuilding (and occasionally designing) \napplications, and everything in between.",
-                                            style: TextStyle(
-                                              color: Colors.grey[600],
-                                              fontSize: 16.0,
-                                              letterSpacing: 2.75,
-                                              wordSpacing: 0.75,
+                                        Wrap(
+                                          children: [
+                                             Text(
+                                              "I'm a developer based in Bangi, Selangor specializing in \nbuilding (and occasionally designing) \napplications, and everything in between.",
+                                              style: TextStyle(
+                                                color: Colors.grey[600],
+                                                fontSize: 16.0,
+                                                letterSpacing: 2.75,
+                                                wordSpacing: 0.75,
+                                              ),
+                                            )
+                                          ],
+                                        ),
+
+                                        SizedBox(height: size.height * .12),
+
+                                        //get in tuch text
+                                        InkWell(
+                                          onTap: () {
+                                            //method.launchEmail();
+                                          },
+                                          hoverColor: const Color(0xff64FFDA).withOpacity(0.2),
+                                          borderRadius: BorderRadius.circular(4.0),
+                                          child: Container(
+                                            alignment: Alignment.center,
+                                            height: size.height * 0.09,
+                                            width: size.width * 0.14,
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                //color: const Color(0xff64FFDA),
+                                                color: Colors.blue,
+                                              ),
+                                              borderRadius:
+                                              BorderRadius.circular(4.0),
                                             ),
-                                          )
-                                        ],
-                                      ),
-
-                                      SizedBox(height: size.height * .12),
-
-                                      //get in tuch text
-                                      InkWell(
-                                        onTap: () {
-                                          //method.launchEmail();
-                                        },
-                                        hoverColor: const Color(0xff64FFDA).withOpacity(0.2),
-                                        borderRadius: BorderRadius.circular(4.0),
-                                        child: Container(
-                                          alignment: Alignment.center,
-                                          height: size.height * 0.09,
-                                          width: size.width * 0.14,
-                                          decoration: BoxDecoration(
-                                            border: Border.all(
-                                              //color: const Color(0xff64FFDA),
-                                              color: Colors.blue,
-                                            ),
-                                            borderRadius:
-                                            BorderRadius.circular(4.0),
-                                          ),
-                                          child: Text(
-                                            "Get In Touch",
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              //color: Color(0xff64FFDA),
-                                              color: Colors.black.withOpacity(.8),
-                                              letterSpacing: 2.75,
-                                              wordSpacing: 1.0,
-                                              fontSize: 15.0,
+                                            child: Text(
+                                              "Get In Touch",
+                                              textAlign: TextAlign.center,
+                                              style: TextStyle(
+                                                //color: Color(0xff64FFDA),
+                                                color: Colors.black.withOpacity(.8),
+                                                letterSpacing: 2.75,
+                                                wordSpacing: 1.0,
+                                                fontSize: 15.0,
+                                              ),
                                             ),
                                           ),
                                         ),
-                                      ),
 
-                                      SizedBox(height: size.height * 0.20),
-                                    ],
+                                        SizedBox(height: size.height * 0.20),
+                                      ],
+                                    ),
                                   ),
 
                                   //About Me
