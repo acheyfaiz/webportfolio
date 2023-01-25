@@ -8,7 +8,7 @@ class Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return SizedBox(
-      width: size.width, height: size.height * .3,
+      width: size.width, height: size.height * .28,
       child: ColoredBox(
         color: Colors.black,
         child: Padding(
@@ -17,7 +17,7 @@ class Footer extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
 
-              const SizedBox(height: 40),
+              const SizedBox(height: 70),
 
               const FooterDesc(),
 

@@ -48,7 +48,7 @@ class About extends StatelessWidget {
           const SizedBox(height: 80),
 
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 80),
+            padding: const EdgeInsets.symmetric(horizontal: 150),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
