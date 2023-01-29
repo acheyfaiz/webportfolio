@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'dart:html' as html;
 
 class Footer extends StatelessWidget {
   const Footer({Key? key}) : super(key: key);
@@ -8,16 +9,14 @@ class Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return SizedBox(
-      width: size.width, height: size.height * .28,
+      width: size.width,
       child: ColoredBox(
         color: Colors.black,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 90),
+          padding: const EdgeInsets.symmetric(horizontal: 140, vertical: 50),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-
-              const SizedBox(height: 70),
 
               const FooterDesc(),
 
@@ -34,7 +33,7 @@ class Footer extends StatelessWidget {
               const SizedBox(height: 30),
 
               /// copyright text
-              const Text("Copyright 2023. Made with Flutter 💙", style: TextStyle(
+              const Text("Copyright 2023. Made with Flutter 💙 (v1.0.1)", style: TextStyle(
                 color: Colors.white, fontSize: 13
               ))
 
@@ -51,6 +50,13 @@ class FooterDesc extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    List<FooterOption> list = [
+      FooterOption(url: 'https://github.com/acheyfaiz', icon: FontAwesomeIcons.github),
+      FooterOption(url: 'https://twitter.com/mhdfaizz_', icon: FontAwesomeIcons.twitter),
+      FooterOption(url: 'https://www.linkedin.com/in/muhdfaizz/', icon: FontAwesomeIcons.linkedin),
+    ];
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -96,31 +102,16 @@ class FooterDesc extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-
-                IconButton(
-                    icon: const FaIcon(FontAwesomeIcons.github),
-                    color: Colors.grey[600],
-                    iconSize: 16.0,
-                    padding: const EdgeInsets.all(0),
-                    onPressed: () {}),
-
-                IconButton(
-                    icon: const FaIcon(FontAwesomeIcons.twitter),
-                    color: Colors.grey[600],
-                    iconSize: 16.0,
-                    padding: const EdgeInsets.all(0),
-                    onPressed: () {}),
-
-                IconButton(
-                  icon: const FaIcon(FontAwesomeIcons.linkedin),
+              children: list.map((e) => IconButton(
+                hoverColor: Colors.blue,
                   color: Colors.grey[600],
-                  onPressed: () {},
                   iconSize: 16.0,
                   padding: const EdgeInsets.all(0),
-                ),
-
-              ],
+                  onPressed: (){
+                    html.window.open(e.url, "_blank");
+                  },
+                  icon: FaIcon(e.icon))
+              ).toList(),
             )
 
           ],
@@ -129,5 +120,13 @@ class FooterDesc extends StatelessWidget {
       ],
     );
   }
+}
+
+class FooterOption {
+
+  late String url;
+  late IconData icon;
+
+  FooterOption({required this.url, required this.icon});
 }
 

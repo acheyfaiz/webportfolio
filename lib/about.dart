@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class About extends StatelessWidget {
   const About({Key? key}) : super(key: key);
@@ -10,6 +11,7 @@ class About extends StatelessWidget {
     List<String> list = [
       "Dart",
       "Flutter",
+      "Firebase",
       "CSS",
       "HTML",
       "PHP",
@@ -19,7 +21,6 @@ class About extends StatelessWidget {
 
     return Container(
       color: Colors.grey[50],
-      height: size.height * .8,
       width: size.width,
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -28,8 +29,8 @@ class About extends StatelessWidget {
 
           const SizedBox(height: 40),
 
-          const Text("ABOUT ME", style: TextStyle(
-            fontSize: 30, fontWeight: FontWeight.bold
+          Text("ABOUT ME", style: GoogleFonts.poppins(
+            fontSize: 30, fontWeight: FontWeight.w700
           )),
 
           Container(
@@ -56,29 +57,50 @@ class About extends StatelessWidget {
 
                 /// row-col kiri
                 Expanded(
+                  flex: 1,
+                  child: ColoredBox(
+                    color: Colors.transparent,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 50),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+
+                          Container(
+                            height: size.height / 2,
+                            width: size.width / 4,
+                            color: Colors.black54,
+                            child: const Image(
+                              fit: BoxFit.cover,
+                              image: AssetImage("images/profile-picture.jpg"),
+                            ),
+                          ),
+
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+
+
+                /// row-col kanan
+                Expanded(
+                  flex: 2,
                   child: ColoredBox(
                     color: Colors.transparent,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
-                      children: const [
+                      children: [
 
                         Text("Get to know me !", style: TextStyle(
                             fontSize: 22, fontWeight: FontWeight.bold
                         )),
 
                         SizedBox(height: 30),
-
-                        // Container(
-                        //   height: size.height / 2,
-                        //   width: size.width / 4,
-                        //   color: Colors.black54,
-                        //   child: const Image(
-                        //     fit: BoxFit.cover,
-                        //     image: AssetImage("images/profile-picture.jpg"),
-                        //   ),
-                        // ),
 
                         Text("I'm a Frontend Mobile Developer using Flutter framework.\nCheck out some of my work in the Projects section.\n"
                             "Feel free to connect or follow me on my Linkedin",
@@ -95,22 +117,7 @@ class About extends StatelessWidget {
                             )
                         ),
 
-                      ],
-                    ),
-                  ),
-                ),
-
-                // const SizedBox(width: 50),
-
-                /// row-col kanan
-                Expanded(
-                  child: ColoredBox(
-                    color: Colors.transparent,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
+                        const SizedBox(height: 30),
 
                         const Text("My Skills", style: TextStyle(
                             fontSize: 22, fontWeight: FontWeight.bold,
@@ -133,6 +140,8 @@ class About extends StatelessWidget {
                           )).toList(),
                         ),
 
+                        const SizedBox(height: 80),
+
                       ],
                     ),
                   ),
@@ -140,7 +149,9 @@ class About extends StatelessWidget {
 
               ],
             ),
-          )
+          ),
+
+          const SizedBox(height: 50),
 
         ],
       ),

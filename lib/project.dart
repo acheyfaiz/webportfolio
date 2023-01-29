@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'dart:html' as html;
 
 class Project extends StatelessWidget {
   const Project({Key? key}) : super(key: key);
@@ -7,319 +9,260 @@ class Project extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
 
-    return Container(
+    List<ProjectDetail> project = [
+
+      ProjectDetail(
+          title: "Bizapp X",
+          desc: "BizApp X is a new-look BizApp application, which help you as agent or dropship to follow HQ/Stokist or monitor your sales",
+          image: "images/img1.png",
+          image2: "images/img2.png",
+          urlAndroid: "https://play.google.com/store/apps/details?id=com.bizapp.bizappx&hl=en",
+          urlios: "https://apps.apple.com/my/app/bizapp-x/id1581323969"),
+
+      ProjectDetail(
+          title: "Bizappay",
+          desc: "Bizappay provides online payment platform services\nfor businesses and individuals with a low charge rate",
+          image: "images/bizappay.png",
+          image2: "images/bizappay1.png",
+          urlAndroid: "https://play.google.com/store/apps/details?id=com.bizapp.bizappay&hl=en&gl=US",
+          urlios: "https://apps.apple.com/my/app/bizappay/id1525672898"),
+
+      ProjectDetail(
+          title: "Quranly",
+          desc: "A habit-building Quran app that brings a habit-centered,\nroutine-driven approach to Quran reading",
+          image: "images/quranly.png",
+          image2: "images/quranly1.png",
+          urlAndroid: "https://play.google.com/store/apps/details?id=com.quranly.app&hl=en&gl=US",
+          urlios: "https://apps.apple.com/my/app/quranly/id1559233786"),
+
+      ProjectDetail(
+          title: "Aware",
+          desc: "Aware Academy has been helping thousands of Muslims around the world combat porn addiction for the past 17 years",
+          image: "images/aware.png",
+          image2: "images/aware1.png",
+          urlAndroid: "https://play.google.com/store/apps/details?id=au.com.awareacademy&hl=en&gl=US",
+          urlios: "https://apps.apple.com/my/app/aware-academy/id1611163995"),
+
+    ];
+
+    return ColoredBox(
       color: Colors.white,
-      width: size.width,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
+      child: SizedBox(
+        width: size.width,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
 
-          const SizedBox(height: 40),
+            const SizedBox(height: 40),
 
-          const Text("PROJECTS", style: TextStyle(
-              fontSize: 30, fontWeight: FontWeight.bold
-          )),
+            Text("PROJECTS", style: GoogleFonts.poppins(
+                fontSize: 30, fontWeight: FontWeight.w700
+            )),
 
-          Container(
-            height: 3, color: Colors.blue[400],
-            width: 30, margin: const EdgeInsets.only(top: 30, bottom: 20),
-          ),
+            Container(
+              height: 3, color: Colors.blue[400],
+              width: 30, margin: const EdgeInsets.only(top: 30, bottom: 20),
+            ),
 
-          /// subtitle
-          const Text("Here you will find some personal and clients projects that i created\nwith each containing its own case study",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  fontSize: 16
-              )),
+            /// subtitle
+            const Text("Here you will find some personal and clients projects that i created\nwith each containing its own case study",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 16
+                )),
 
-          const SizedBox(height: 80),
+            const SizedBox(height: 80),
 
-          /// project bizapp x
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
 
-              SizedBox(
-                width: size.width * .5,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
+            ...project.map((e) => Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+
+                const SizedBox(height: 70),
+
+                Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      height: size.height / 2,
-                      color: Colors.black54,
-                      child: const Image(
-                        image: AssetImage("images/img1.png"),
+
+                    SizedBox(
+                      width: size.width * .5,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            height: size.height / 2,
+                            color: Colors.black54,
+                            child: Image(
+                              image: AssetImage(e.image),
+                            ),
+                          ),
+                          const SizedBox(width: 10),
+                          Container(
+                            height: size.height / 2,
+                            color: Colors.black54,
+                            child: Image(
+                              image: AssetImage(e.image2),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    const SizedBox(width: 10),
-                    Container(
-                      height: size.height / 2,
-                      color: Colors.black54,
-                      child: const Image(
-                        image: AssetImage("images/img2.png"),
+
+                    SizedBox(
+                      width: size.width * .5,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 80),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+
+                            Text(e.title, style: const TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 20
+                            )),
+
+                            const SizedBox(height: 20),
+
+                            Text(e.desc, style:const  TextStyle(
+                                fontSize: 17
+                            )),
+
+                            const SizedBox(height: 40),
+
+                            // MaterialButton(
+                            //   padding: const EdgeInsets.symmetric(horizontal: 40),
+                            //   onPressed: (){
+                            //     // html.window.open('https://apps.apple.com/us/app/bizapp-x/id1581323969', "_blank");
+                            //   },
+                            //   height: 50,
+                            //   color: Colors.blue[400],
+                            //   shape: RoundedRectangleBorder(
+                            //       borderRadius: BorderRadius.circular(5)),
+                            //   child: const Text("View Study Case", style: TextStyle(
+                            //       fontSize: 13, color: Colors.white
+                            //   )),
+                            // ),
+
+                            InkWell(
+                              onTap: (){
+                                _showpopup(context);
+                              },
+                              child: Text("View Study Case >>", style: TextStyle(
+                                  fontSize: 13, color: Colors.black,
+                                decoration: TextDecoration.underline
+                              )),
+                            ),
+
+                            const SizedBox(height: 20),
+
+                            Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                MaterialButton(
+                                  padding: const EdgeInsets.symmetric(horizontal: 40),
+                                  hoverColor: Color(0xff2FD37D),
+                                  onPressed: (){
+                                    html.window.open(e.urlAndroid, "_blank");
+                                  },
+                                  height: 50,
+                                  color: Colors.grey[200],
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(80)),
+                                  child: const Text("Download for Android", style: TextStyle(
+                                      fontSize: 13, color: Colors.black
+                                  )),
+                                ),
+
+                                const SizedBox(width: 20),
+
+                                MaterialButton(
+                                  padding: const EdgeInsets.symmetric(horizontal: 40),
+                                  hoverColor: Color(0xffD6D6D6),
+                                  onPressed: (){
+                                    html.window.open(e.urlios,"_blank");
+                                  },
+                                  height: 50,
+                                  color: Colors.grey[200],
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(80)),
+                                  child: const Text("Download for iOS", style: TextStyle(
+                                      fontSize: 13, color: Colors.black
+                                  )),
+                                ),
+                              ],
+                            ),
+
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ),
-
-              SizedBox(
-                width: size.width * .5,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-
-                    Text("Bizapp X", style: TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 20
-                    )),
-
-                    const SizedBox(height: 20),
-
-                    Text("BizApp X is a new-look BizApp application, which help you as agent or dropship\n"
-                        "to follow HQ/Stokist or monitor your sales", style: TextStyle(
-                        fontSize: 17
-                    )),
-
-                    const SizedBox(height: 40),
-
-                    MaterialButton(
-                      padding: const EdgeInsets.symmetric(horizontal: 40),
-                      onPressed: (){},
-                      height: 70,
-                      color: Colors.blue[400],
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Text("View Study Case", style: TextStyle(
-                        fontSize: 16, color: Colors.white
-                      )),
-                    ),
-
-                  ],
-                ),
-              )
-
-            ],
-          ),
-
-          const SizedBox(height: 50),
-
-          /// project bizappay
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-
-              SizedBox(
-                width: size.width * .5,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      height: size.height / 2,
-                      color: Colors.black54,
-                      child: const Image(
-                        image: AssetImage("images/img1.png"),
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    Container(
-                      height: size.height / 2,
-                      color: Colors.black54,
-                      child: const Image(
-                        image: AssetImage("images/img2.png"),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
-              SizedBox(
-                width: size.width * .5,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-
-                    Text("Bizappay", style: TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 20
-                    )),
-
-                    const SizedBox(height: 20),
-
-                    Text("Bizappay provides online payment platform services\n"
-                        "for businesses and individuals with a low charge rate", style: TextStyle(
-                        fontSize: 17
-                    )),
-
-                    const SizedBox(height: 40),
-
-                    MaterialButton(
-                      padding: const EdgeInsets.symmetric(horizontal: 40),
-                      onPressed: (){},
-                      height: 70,
-                      color: Colors.blue[400],
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Text("View Study Case", style: TextStyle(
-                          fontSize: 16, color: Colors.white
-                      )),
-                    ),
+                    )
 
                   ],
                 ),
-              )
 
-            ],
-          ),
+                const SizedBox(height: 70),
 
-          const SizedBox(height: 50),
-
-          /// project quranly
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-
-              SizedBox(
-                width: size.width * .5,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      height: size.height / 2,
-                      color: Colors.black54,
-                      child: const Image(
-                        image: AssetImage("images/img1.png"),
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    Container(
-                      height: size.height / 2,
-                      color: Colors.black54,
-                      child: const Image(
-                        image: AssetImage("images/img2.png"),
-                      ),
-                    ),
-                  ],
+                Container(
+                  color: Colors.grey[200]!,
+                  width: size.width,
+                  margin: const EdgeInsets.only(right: 80, left: 110),
+                  height: 2,
                 ),
-              ),
 
-              SizedBox(
-                width: size.width * .5,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-
-                    Text("Quranly", style: TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 20
-                    )),
-
-                    const SizedBox(height: 20),
-
-                    Text("A habit-building Quran app that brings a habit-centered,\nroutine-driven approach to Quran reading", style: TextStyle(
-                        fontSize: 17
-                    )),
-
-                    const SizedBox(height: 40),
-
-                    MaterialButton(
-                      padding: const EdgeInsets.symmetric(horizontal: 40),
-                      onPressed: (){},
-                      height: 70,
-                      color: Colors.blue[400],
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Text("View Study Case", style: TextStyle(
-                          fontSize: 16, color: Colors.white
-                      )),
-                    ),
-
-                  ],
-                ),
-              )
-
-            ],
-          ),
-
-          const SizedBox(height: 50),
-
-          /// project aware
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-
-              SizedBox(
-                width: size.width * .5,
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      height: size.height / 2,
-                      color: Colors.black54,
-                      child: const Image(
-                        image: AssetImage("images/img1.png"),
-                      ),
-                    ),
-                    const SizedBox(width: 10),
-                    Container(
-                      height: size.height / 2,
-                      color: Colors.black54,
-                      child: const Image(
-                        image: AssetImage("images/img2.png"),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
-              SizedBox(
-                width: size.width * .5,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-
-                    Text("Aware", style: TextStyle(
-                        fontWeight: FontWeight.bold, fontSize: 20
-                    )),
-
-                    const SizedBox(height: 20),
-
-                    Text("Aware Academy has been helping thousands of Muslims around the world\ncombat porn addiction for the past 17 years", style: TextStyle(
-                        fontSize: 17
-                    )),
-
-                    const SizedBox(height: 40),
-
-                    MaterialButton(
-                      padding: const EdgeInsets.symmetric(horizontal: 40),
-                      onPressed: (){},
-                      height: 70,
-                      color: Colors.blue[400],
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Text("View Study Case", style: TextStyle(
-                          fontSize: 16, color: Colors.white
-                      )),
-                    ),
-
-                  ],
-                ),
-              )
-
-            ],
-          ),
-
-          const SizedBox(height: 150),
+              ],
+            )).toList(),
 
 
-        ],
+            const SizedBox(height: 150),
+
+
+          ],
+        ),
       ),
     );
   }
+
+  _showpopup(context){
+    showDialog(
+      context: context,
+      barrierDismissible: true,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Opps..'),
+          content: const Text('Developer has disable for this features.'),
+          actions: <Widget>[
+            TextButton(
+              child: const Text('Close'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+}
+
+class ProjectDetail{
+
+  late String title;
+  late String desc;
+  late String image;
+  late String image2;
+  late String urlAndroid;
+  late String urlios;
+
+  ProjectDetail(
+      {
+        required this.title,
+        required this.desc,
+        required this.image,
+        required this.image2,
+        required this.urlAndroid,
+        required this.urlios
+      });
 }

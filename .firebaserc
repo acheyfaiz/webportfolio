@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "portfolio-web-6243e"
-  }
+    "default": "viewtofaizdesk",
+    "production": "viewtofaizdesk"
+  },
+  "targets": {},
+  "etags": {}
 }
