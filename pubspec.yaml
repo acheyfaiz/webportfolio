@@ -38,6 +38,11 @@ dependencies:
   url_launcher: any
   font_awesome_flutter: any
   scroll_to_index: any
+  image_downloader_web: ^2.0.2
+  screenshot: ^1.3.0
+  path_provider: ^2.0.11
+  share_plus: ^6.3.0
+  google_fonts: ^3.0.1
 
 dev_dependencies:
   flutter_test:
