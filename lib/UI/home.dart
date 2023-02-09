@@ -1,26 +1,50 @@
-import 'package:flutter/widgets.dart';
-import 'package:portfolio/UI/homepage.dart';
-import 'package:portfolio/UI/mobile_home.dart';
+import 'package:flutter/material.dart';
 
-import '../home2.dart';
+import '../UI/home2.dart';
 
-class Home extends StatefulWidget {
+class Home extends StatelessWidget {
+  const Home({Key? key}) : super(key: key);
+
   @override
-  _HomeState createState() => _HomeState();
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Responsive(
+        largeScreen: Home2(),
+        smallScreen: Home2(),
+      ),
+    );
+  }
 }
 
-class _HomeState extends State<Home> {
+
+class Responsive extends StatelessWidget {
+  final Widget largeScreen;
+  final Widget smallScreen;
+
+  const Responsive({Key? key,
+    required this.largeScreen,
+    required this.smallScreen,
+  }) : super(key: key);
+
+  static bool isSmallScreen(BuildContext context) {
+    return MediaQuery.of(context).size.width < 800;
+  }
+
+  static bool isLargeScreen(BuildContext context) {
+    return MediaQuery.of(context).size.width >= 800;
+  }
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth >= 1000) {
-          return const Home2();
+        if (constraints.maxWidth >= 800) {
+          return largeScreen;
         } else {
-          return const Home2();
-          //return const MobileHomePage();
+          return smallScreen;
         }
       },
     );
   }
 }
+

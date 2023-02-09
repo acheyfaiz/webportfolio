@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'dart:html' as html;
 
+import '../UI/home.dart';
+
 class Footer extends StatelessWidget {
   const Footer({Key? key}) : super(key: key);
 
@@ -13,7 +15,8 @@ class Footer extends StatelessWidget {
       child: ColoredBox(
         color: Colors.black,
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 140, vertical: 50),
+          padding: Responsive.isLargeScreen(context) ? const EdgeInsets.symmetric(horizontal: 140, vertical: 50)
+              : const EdgeInsets.symmetric(horizontal: 5, vertical: 50),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -33,7 +36,7 @@ class Footer extends StatelessWidget {
               const SizedBox(height: 30),
 
               /// copyright text
-              const Text("Copyright 2023. Made with Flutter 💙 (v1.0.1)", style: TextStyle(
+              const Text("Copyright 2023. Made with Flutter 💙 (v1.0.2)", textAlign: TextAlign.center, style: TextStyle(
                 color: Colors.white, fontSize: 13
               ))
 
@@ -57,6 +60,10 @@ class FooterDesc extends StatelessWidget {
       FooterOption(url: 'https://www.linkedin.com/in/muhdfaizz/', icon: FontAwesomeIcons.linkedin),
     ];
 
+    return Responsive.isLargeScreen(context) ? _web(list) : _mobile(list);
+  }
+
+  _web(List<FooterOption> list){
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -68,8 +75,8 @@ class FooterDesc extends StatelessWidget {
           children: const [
 
             Text("MUHAMMAD FAIZ", style: TextStyle(
-             fontSize: 16, fontWeight: FontWeight.bold,
-              color: Colors.white
+                fontSize: 16, fontWeight: FontWeight.bold,
+                color: Colors.white
             )),
 
             SizedBox(height: 20),
@@ -103,7 +110,7 @@ class FooterDesc extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: list.map((e) => IconButton(
-                hoverColor: Colors.blue,
+                  hoverColor: Colors.blue,
                   color: Colors.grey[600],
                   iconSize: 16.0,
                   padding: const EdgeInsets.all(0),
@@ -120,6 +127,72 @@ class FooterDesc extends StatelessWidget {
       ],
     );
   }
+
+  _mobile(List<FooterOption> list){
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+
+        /// nama
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+
+            Text("MUHAMMAD FAIZ", style: TextStyle(
+                fontSize: 16, fontWeight: FontWeight.bold,
+                color: Colors.white
+            )),
+
+            SizedBox(height: 20),
+
+            Text("A Flutter developer building Frontend Design\nthat leads to the success of overall product.", style: TextStyle(
+                fontSize: 14,
+                color: Colors.white
+            )),
+
+          ],
+        ),
+
+        const SizedBox(height: 30),
+
+        /// social account
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+
+            const Text("SOCIAL", style: TextStyle(
+                fontSize: 16, fontWeight: FontWeight.bold,
+                color: Colors.white
+            )),
+
+            const SizedBox(height: 10),
+
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: list.map((e) => IconButton(
+                  hoverColor: Colors.blue,
+                  color: Colors.grey[600],
+                  iconSize: 16.0,
+                  padding: const EdgeInsets.all(0),
+                  onPressed: (){
+                    html.window.open(e.url, "_blank");
+                  },
+                  icon: FaIcon(e.icon))
+              ).toList(),
+            )
+
+          ],
+        ),
+
+      ],
+    );
+  }
+
 }
 
 class FooterOption {

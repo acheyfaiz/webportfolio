@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/UI/home.dart';
 
-import 'dinner_template.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'viewtofaizdesk (Web Portfolio)',
       debugShowCheckedModeBanner: false,
-      home: Home(),
+      home: const Home(),
       theme: ThemeData(
         textTheme: GoogleFonts.poppinsTextTheme()
       ),

@@ -1,240 +1,258 @@
 import 'package:flutter/material.dart';
-import '../Widget/custom_text.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/UI/home.dart';
 
 class About extends StatelessWidget {
-
-  Widget technology(BuildContext context, String text) {
-    return Row(
-      children: [
-        Icon(
-          Icons.skip_next,
-          // color: const Color(0xff64FFDA).withOpacity(0.6),
-          color: Colors.lightBlueAccent[400],
-          size: 16,
-        ),
-        SizedBox(
-          width: MediaQuery.of(context).size.width * 0.01,
-        ),
-        Text(
-          text,
-          style: const TextStyle(
-            color: Color(0xff717C99),
-            letterSpacing: 1.75,
-          ),
-        )
-      ],
-    );
-  }
+  const About({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
+    List<String> list = [
+      "Dart",
+      "Flutter",
+      "Firebase",
+      "CSS",
+      "HTML",
+      "PHP",
+      "Laravel",
+      "Nodejs",
+    ];
+
+    return Responsive.isLargeScreen(context) ? _web(context, list) : _mobile(context, list);
+  }
+
+  Widget _web(context, List list){
+    final Size size = MediaQuery.of(context).size;
     return Container(
-      height: size.height,
-      width: size.width - 100,
-      child: Row(
+      color: Colors.grey[50],
+      width: size.width,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          //About me
+
+          const SizedBox(height: 40),
+
+          Text("ABOUT ME", style: GoogleFonts.poppins(
+              fontSize: 30, fontWeight: FontWeight.w700
+          )),
+
           Container(
-            height: size.height * 0.9,
-            width: size.width * .5,
-            child: Column(
+            height: 3, color: Colors.blue[400],
+            width: 30, margin: const EdgeInsets.only(top: 30, bottom: 20),
+          ),
+
+          /// subtitle
+          const Text("Here you will find more information about me, what i do and my current skills\n"
+              "mostly in terms of programming and technology",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 16
+              )),
+
+          const SizedBox(height: 80),
+
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 150),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                //About me title
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    CustomText(
-                      text: "01.",
-                      textsize: 20.0,
-                      color: Colors.black,
-                    ),
 
-                    const SizedBox(width: 12.0),
+                /// row-col kiri
+                Expanded(
+                  flex: 1,
+                  child: ColoredBox(
+                    color: Colors.transparent,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 50),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
 
-                    CustomText(
-                      text: "About Me",
-                      textsize: 26.0,
-                      color: Colors.black,
-                    ),
+                          Container(
+                            height: size.height / 2,
+                            width: size.width / 4,
+                            color: Colors.black54,
+                            child: const Image(
+                              fit: BoxFit.cover,
+                              image: AssetImage("images/profile-picture.jpg"),
+                            ),
+                          ),
 
-                    SizedBox(
-                      width: size.width * 0.01,
-                    ),
-
-                    Container(
-                      width: size.width / 4,
-                      height: 1.10,
-                      color: Color(0xff303C55),
-                    ),
-                  ],
-                ),
-
-                SizedBox(height: size.height * 0.07),
-
-                //About me desc
-                Wrap(
-                  children: [
-                    CustomText(
-                      text:
-                      "Hello! I'm Faiz, mobile apps developer who currently living in Bangi, Selangor.\n\nI enjoy creating things that live on the internet, whether that be websites, applications, or anything in between. My goal is to always build products that provide pixel-perfect and performance experiences.\n\n",
-                      textsize: 16.0,
-                      color: Color(0xff828DAA),
-                    ),
-                    CustomText(
-                      text:
-                      "Currently, I am working in tech company known as Bizapp Ventures Sdn Bhd which provide business application to entrepreneur.\n\n",
-                      textsize: 16.0,
-                      color: Color(0xff828DAA),
-                    ),
-                    CustomText(
-                      text:
-                      "Here are a few language I've been knowledge recently:\n\n",
-                      textsize: 16.0,
-                      color: Color(0xff828DAA),
-                    ),
-                  ],
-                ),
-
-                // list of known language
-                SizedBox(
-                  height: size.height * 0.15,
-                  width: size.width,
-                  child: Wrap(
-                    children: [
-                      SizedBox(
-                        width: size.width * 0.20,
-                        height: size.height * 0.15,
-                        child: Column(
-                          children: [
-                            technology(context, "Dart"),
-                            technology(context, "Flutter"),
-                            technology(context, "UI/UX (Adobe Xd)"),
-                            technology(context, "Adobe Photoshop"),
-                            technology(context, "Adobe Lightroom"),
-
-                          ],
-                        ),
+                        ],
                       ),
-                      SizedBox(
-                        width: size.width * 0.17,
-                        height: size.height * 0.15,
-                        child: Column(
-                          children: [
-                            technology(context, "C++, Java"),
-                            technology(context, "HTML & CSS"),
-                            technology(context, "Git - Github"),
-                            technology(context, "Firebase"),
-
-                          ],
-                        ),
-                      )
-                    ],
+                    ),
                   ),
-                )
+                ),
+
+
+                /// row-col kanan
+                Expanded(
+                  flex: 2,
+                  child: ColoredBox(
+                    color: Colors.transparent,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+
+                        const Text("Get to know me !", style: TextStyle(
+                            fontSize: 22, fontWeight: FontWeight.bold
+                        )),
+
+                        const SizedBox(height: 30),
+
+                        const Text("I'm a Frontend Mobile Developer using Flutter framework.\nCheck out some of my work in the Projects section.\n"
+                            "Feel free to connect or follow me on my Linkedin",
+                            style: TextStyle(
+                                fontSize: 16, height: 1.6
+                            )),
+
+                        const SizedBox(height: 20),
+
+                        const Text("I'm open to job opportunities where i can contribute, learn and grow.\n"
+                            "If you have a good opportunity that matches my skills and experience\nthen don't hesitate to contact me",
+                            style: TextStyle(
+                                fontSize: 16, height: 1.6
+                            )
+                        ),
+
+                        const SizedBox(height: 30),
+
+                        const Text("My Skills", style: TextStyle(
+                          fontSize: 22, fontWeight: FontWeight.bold,
+                        )),
+
+                        const SizedBox(height: 30),
+
+                        Wrap(
+                          runSpacing: 10,
+                          children: list.map((e) => Container(
+                            decoration: BoxDecoration(
+                                color: const Color(0xE7E7E7E7),
+                                borderRadius: BorderRadius.circular(3)
+                            ),
+                            margin: const EdgeInsets.only(right: 10),
+                            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+                            child: Text(e, style: const TextStyle(
+                                fontSize: 14, color: Colors.black54, fontWeight: FontWeight.bold
+                            )),
+                          )).toList(),
+                        ),
+
+                        const SizedBox(height: 80),
+
+                      ],
+                    ),
+                  ),
+                ),
+
               ],
             ),
           ),
 
-          // Profile Image
-          Expanded(
-            child: Container(
-              height: size.height / 1.5,
-              width: size.width / 2 - 100,
-              // color: Colors.white,
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
+          const SizedBox(height: 50),
 
-                  Positioned(
-                    top: size.height * 0.12,
-                    left: size.width * 0.120,
-                    child: Card(
-                      elevation: 3,
-                      //color: const Color(0xff61F9D5),
-                      color: Colors.blue[50],
-                      child: Container(
-                        margin: EdgeInsets.all(2),
-                        height: size.height / 2,
-                        width: size.width / 5.5,
-                        color: Colors.transparent,
-                      ),
-                    ),
-                  ),
-
-                  CustomImageAnimation()
-                ],
-              ),
-            ),
-          ),
         ],
       ),
     );
   }
-}
 
-class CustomImageAnimation extends StatefulWidget {
-  CustomImageAnimation({Key? key}) : super(key: key);
-
-  @override
-  _CustomImageAnimationState createState() => _CustomImageAnimationState();
-}
-
-class _CustomImageAnimationState extends State<CustomImageAnimation> {
-  Color customImageColor = Color(0xff61F9D5).withOpacity(0.1);
-  // ignore: unused_field
-  int _enterCounter = 0;
-  // ignore: unused_field
-  int _exitCounter = 0;
-  double x = 0.0;
-  double y = 0.0;
-
-  void _incrementEnter(PointerEvent details) {
-    setState(() {
-      _enterCounter++;
-    });
-  }
-
-  void _incrementExit(PointerEvent details) {
-    setState(() {
-      customImageColor = Color(0xff61F9D5).withOpacity(0.1);
-      _exitCounter++;
-    });
-  }
-
-  void _updateLocation(PointerEvent details) {
-    setState(() {
-      customImageColor = Colors.transparent;
-      x = details.position.dx;
-      y = details.position.dy;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    return MouseRegion(
-      onEnter: _incrementEnter,
-      onHover: _updateLocation,
-      onExit: _incrementExit,
-      child: Stack(
+  Widget _mobile(context, List list){
+    final Size size = MediaQuery.of(context).size;
+    return Container(
+      color: Colors.grey[50],
+      width: size.width,
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+
+          const SizedBox(height: 40),
+
+          Text("ABOUT ME", style: GoogleFonts.poppins(
+              fontSize: 30, fontWeight: FontWeight.w700
+          )),
+
+          Container(
+            height: 3, color: Colors.blue[400],
+            width: 30, margin: const EdgeInsets.only(top: 30, bottom: 20),
+          ),
+
+          /// subtitle
+          const Text("Here you will find more information about me, what i do and my current skills\n"
+              "mostly in terms of programming and technology",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 16
+              )),
+
+          const SizedBox(height: 50),
+
           Container(
             height: size.height / 2,
-            width: size.width / 5,
+            width: size.width,
             color: Colors.black54,
             child: const Image(
               fit: BoxFit.cover,
               image: AssetImage("images/profile-picture.jpg"),
             ),
           ),
-          Container(
-            height: size.height / 2,
-            width: size.width / 5,
-            color: customImageColor,
+
+          const SizedBox(height: 40),
+
+          const Text("Get to know me !", style: TextStyle(
+              fontSize: 22, fontWeight: FontWeight.bold
+          )),
+
+          const SizedBox(height: 30),
+
+          const Text("I'm a Frontend Mobile Developer using Flutter framework. Check out some of my work in the Projects section. Feel free to connect or follow me on my Linkedin",
+              style: TextStyle(
+                  fontSize: 16, height: 1.6
+              )),
+
+          const SizedBox(height: 20),
+
+          const Text("I'm open to job opportunities where i can contribute, learn and grow.\n"
+              "If you have a good opportunity that matches my skills and experience\nthen don't hesitate to contact me",
+              style: TextStyle(
+                  fontSize: 16, height: 1.6
+              )
           ),
+
+          const SizedBox(height: 30),
+
+          const Text("My Skills", style: TextStyle(
+            fontSize: 22, fontWeight: FontWeight.bold,
+          )),
+
+          const SizedBox(height: 30),
+
+          Wrap(
+            runSpacing: 10,
+            children: list.map((e) => Container(
+              decoration: BoxDecoration(
+                  color: const Color(0xE7E7E7E7),
+                  borderRadius: BorderRadius.circular(3)),
+              margin: const EdgeInsets.only(right: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+              child: Text(e, style: const TextStyle(
+                  fontSize: 14, color: Colors.black54, fontWeight: FontWeight.bold
+              )),
+            )).toList(),
+          ),
+
+          const SizedBox(height: 80),
+
         ],
       ),
     );
   }
+
 }
