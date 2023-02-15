@@ -116,17 +116,17 @@ class BodyContent extends StatelessWidget {
 
                     const SizedBox(height: 40),
 
-                    MaterialButton(
-                      onPressed: (){},
-                      minWidth: 150,
-                      height: 50,
-                      color: Colors.blue[400],
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(2)),
-                      child: const Text("PROJECTS", style: TextStyle(
-                        color: Colors.white
-                      )),
-                    ),
+                    // MaterialButton(
+                    //   onPressed: (){},
+                    //   minWidth: 150,
+                    //   height: 50,
+                    //   color: Colors.blue[400],
+                    //     shape: RoundedRectangleBorder(
+                    //       borderRadius: BorderRadius.circular(2)),
+                    //   child: const Text("PROJECTS", style: TextStyle(
+                    //     color: Colors.white
+                    //   )),
+                    // ),
 
                   ],
                 ),

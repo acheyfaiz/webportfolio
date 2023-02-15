@@ -36,7 +36,7 @@ class Footer extends StatelessWidget {
               const SizedBox(height: 30),
 
               /// copyright text
-              const Text("Copyright 2023. Made with Flutter 💙 (v1.0.2)", textAlign: TextAlign.center, style: TextStyle(
+              const Text("Copyright 2023. Made with Flutter 💙 (v1.0.3)", textAlign: TextAlign.center, style: TextStyle(
                 color: Colors.white, fontSize: 13
               ))
 
