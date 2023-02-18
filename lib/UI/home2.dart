@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/UI/connect.dart';
 import 'package:portfolio/UI/home.dart';
 
 import 'about.dart';
@@ -138,6 +139,8 @@ class BodyContent extends StatelessWidget {
         const About(),
 
         const Project(),
+
+        const Connect()
 
       ],
     );

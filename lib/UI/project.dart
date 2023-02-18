@@ -14,33 +14,50 @@ class Project extends StatelessWidget {
 
       ProjectDetail(
           title: "Bizapp X",
-          desc: "BizApp X is a new-look BizApp application, which help you as agent or dropship to follow HQ/Stokist or monitor your sales",
-          image: "images/img1.png",
-          image2: "images/img2.png",
+          desc: "Bizapp is an application available in Android, IOS and web platforms. Bizapp is utilised by online and offline businesses, basic agents, dropship agents, stockists and headquarters to manage order data. "
+              "Any entreprenuers should engage with E-commerce or they will be left behind. Bizapp has a clear and easy interface that will make entreprenuers fell in love and help their business to grow.",
+          image: "images/bizapp1.jpg",
+          image2: "images/bizapp2.jpg",
+          image3: "images/bizapp3.jpg",
+          image4: "images/bizapp4.jpg",
+          image5: "images/bizapp5.jpg",
+          image6: "images/bizapp6.jpg",
           urlAndroid: "https://play.google.com/store/apps/details?id=com.bizapp.bizappx&hl=en",
           urlios: "https://apps.apple.com/my/app/bizapp-x/id1581323969"),
 
       ProjectDetail(
           title: "Bizappay",
-          desc: "Bizappay provides online payment platform services\nfor businesses and individuals with a low charge rate",
-          image: "images/bizappay.png",
-          image2: "images/bizappay1.png",
+          desc: "Bizappay provides online payment platform services for businesses and individuals with a low charge rate. Create, track & record transaction in one web-mobile application system to empower your business with right tools to collect and record online payments.",
+          image: "images/bizappay1.jpg",
+          image2: "images/bizappay2.jpg",
+          image3: "images/bizappay3.jpg",
+          image4: "images/bizappay4.jpg",
+          image5: "images/bizappay5.jpg",
+          image6: "images/bizappay6.jpg",
           urlAndroid: "https://play.google.com/store/apps/details?id=com.bizapp.bizappay&hl=en&gl=US",
           urlios: "https://apps.apple.com/my/app/bizappay/id1525672898"),
 
       ProjectDetail(
           title: "Quranly",
-          desc: "A habit-building Quran app that brings a habit-centered,\nroutine-driven approach to Quran reading",
-          image: "images/quranly.png",
-          image2: "images/quranly1.png",
+          desc: "A habit-building Quran app that brings a habit-centered, routine-driven approach to Quran reading. It gives you a visual tracker representation of your daily progress to stay motivated to reach your goals. ",
+          image: "images/quranly1.jpg",
+          image2: "images/quranly2.jpg",
+          image3: "images/quranly3.jpg",
+          image4: "images/quranly4.jpg",
+          image5: "images/quranly5.jpg",
+          image6: "images/quranly6.jpg",
           urlAndroid: "https://play.google.com/store/apps/details?id=com.quranly.app&hl=en&gl=US",
           urlios: "https://apps.apple.com/my/app/quranly/id1559233786"),
 
       ProjectDetail(
           title: "Aware",
           desc: "Aware Academy has been helping thousands of Muslims around the world combat porn addiction for the past 17 years",
-          image: "images/aware.png",
-          image2: "images/aware1.png",
+          image: "images/aware1.jpg",
+          image2: "images/aware2.jpg",
+          image3: "images/aware3.jpg",
+          image4: "images/aware4.jpg",
+          image5: "images/aware5.jpg",
+          image6: "images/aware6.jpg",
           urlAndroid: "https://play.google.com/store/apps/details?id=au.com.awareacademy&hl=en&gl=US",
           urlios: "https://apps.apple.com/my/app/aware-academy/id1611163995"),
 
@@ -56,7 +73,7 @@ class Project extends StatelessWidget {
       builder: (BuildContext context) {
         return AlertDialog(
           title: const Text('Opps..'),
-          content: const Text('Case study not available right now.'),
+          content: const Text('Case study is not available right now.'),
           actions: <Widget>[
             TextButton(
               child: const Text('Close'),
@@ -108,37 +125,42 @@ class Project extends StatelessWidget {
 
                 const SizedBox(height: 70),
 
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
+                /// image
+                SizedBox(
+                  width: size.width * .7,
+                  height: 500,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    physics: const BouncingScrollPhysics(),
+                    children: [
+                      _imagemobile(context, e.image),
+                      const SizedBox(width: 20),
+                      _imagemobile(context, e.image2),
+                      const SizedBox(width: 20),
+                      _imagemobile(context, e.image3),
+                      const SizedBox(width: 20),
+                      _imagemobile(context, e.image4),
+                      const SizedBox(width: 20),
+                      _imagemobile(context, e.image5),
+                      const SizedBox(width: 20),
+                      _imagemobile(context, e.image6),
+                    ],
+                  ),
+                ),
 
-                    SizedBox(
-                      width: size.width * .5,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Container(
-                            height: size.height / 2,
-                            color: Colors.black54,
-                            child: Image(
-                              image: AssetImage(e.image),
-                            ),
-                          ),
-                          const SizedBox(width: 10),
-                          Container(
-                            height: size.height / 2,
-                            color: Colors.black54,
-                            child: Image(
-                              image: AssetImage(e.image2),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                const SizedBox(height: 10),
 
-                    SizedBox(
-                      width: size.width * .5,
+                const Align(
+                    alignment: Alignment.center,
+                    child: Text('Scroll to see more images', style: TextStyle(
+                        fontSize: 14, fontStyle: FontStyle.italic
+                    ))),
+
+                const SizedBox(height: 50),
+
+                SizedBox(
+                      width: size.width * .7,
                       child: Padding(
                         padding: const EdgeInsets.only(right: 80),
                         child: Column(
@@ -224,10 +246,7 @@ class Project extends StatelessWidget {
                           ],
                         ),
                       ),
-                    )
-
-                  ],
-                ),
+                    ),
 
                 const SizedBox(height: 70),
 
@@ -242,8 +261,7 @@ class Project extends StatelessWidget {
             )).toList(),
 
 
-            const SizedBox(height: 150),
-
+            const SizedBox(height: 100),
 
           ],
         ),
@@ -297,21 +315,17 @@ class Project extends StatelessWidget {
                       shrinkWrap: true,
                       physics: const BouncingScrollPhysics(),
                       children: [
-                        Container(
-                          height: size.height / 2,
-                          color: Colors.black54,
-                          child: Image(
-                            image: AssetImage(e.image),
-                          ),
-                        ),
-                        const SizedBox(width: 10),
-                        Container(
-                          height: size.height / 2,
-                          color: Colors.black54,
-                          child: Image(
-                            image: AssetImage(e.image2),
-                          ),
-                        ),
+                        _imagemobile(context, e.image),
+                        const SizedBox(width: 20),
+                        _imagemobile(context, e.image2),
+                        const SizedBox(width: 20),
+                        _imagemobile(context, e.image3),
+                        const SizedBox(width: 20),
+                        _imagemobile(context, e.image4),
+                        const SizedBox(width: 20),
+                        _imagemobile(context, e.image5),
+                        const SizedBox(width: 20),
+                        _imagemobile(context, e.image6),
 
                       ],
                     ),
@@ -400,6 +414,17 @@ class Project extends StatelessWidget {
     );
   }
 
+  _imagemobile(context, String img){
+    final Size size = MediaQuery.of(context).size;
+    return Container(
+      height: size.height / 2,
+      color: Colors.black54,
+      child: Image(
+        image: AssetImage(img),
+      ),
+    );
+  }
+
 
 }
 
@@ -409,6 +434,10 @@ class ProjectDetail{
   late String desc;
   late String image;
   late String image2;
+  late String image3;
+  late String image4;
+  late String image5;
+  late String image6;
   late String urlAndroid;
   late String urlios;
 
@@ -418,6 +447,10 @@ class ProjectDetail{
         required this.desc,
         required this.image,
         required this.image2,
+        required this.image3,
+        required this.image4,
+        required this.image5,
+        required this.image6,
         required this.urlAndroid,
         required this.urlios
       });
