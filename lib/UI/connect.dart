@@ -31,7 +31,7 @@ class Connect extends StatelessWidget {
             width: 30, margin: const EdgeInsets.only(top: 30, bottom: 20),
           ),
 
-          const Text("Feel free to connect and contact me via Linkedin or email.",
+          const Text("If you have a good opportunity that matches my skills and experience\nthen don't hesitate to connect and contact me via linkedin or email.",
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontSize: 16

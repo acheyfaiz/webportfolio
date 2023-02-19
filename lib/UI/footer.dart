@@ -36,7 +36,7 @@ class Footer extends StatelessWidget {
               const SizedBox(height: 30),
 
               /// copyright text
-              const Text("Copyright 2023. Made with Flutter 💙 (v1.1.0)", textAlign: TextAlign.center, style: TextStyle(
+              const Text("© Copyright 2023. Made with Flutter 💙 (v1.2.0)", textAlign: TextAlign.center, style: TextStyle(
                 color: Colors.white, fontSize: 13
               ))
 
@@ -117,7 +117,7 @@ class FooterDesc extends StatelessWidget {
                   onPressed: (){
                     html.window.open(e.url, "_blank");
                   },
-                  icon: FaIcon(e.icon))
+                  icon: FaIcon(e.icon, color: Colors.white))
               ).toList(),
             )
 
@@ -182,7 +182,7 @@ class FooterDesc extends StatelessWidget {
                   onPressed: (){
                     html.window.open(e.url, "_blank");
                   },
-                  icon: FaIcon(e.icon))
+                  icon: FaIcon(e.icon, color: Colors.white))
               ).toList(),
             )
 

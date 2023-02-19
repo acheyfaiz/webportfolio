@@ -111,23 +111,11 @@ class BodyContent extends StatelessWidget {
 
                     const SizedBox(height: 20),
 
-                    const Text("Ready to explore my portfolio?  Let's check it out", textAlign: TextAlign.center, style: TextStyle(
+                    const Text("Ready to explore my portfolio?  Let's check it out!", textAlign: TextAlign.center, style: TextStyle(
                         fontSize: 16,
                     )),
 
                     const SizedBox(height: 40),
-
-                    // MaterialButton(
-                    //   onPressed: (){},
-                    //   minWidth: 150,
-                    //   height: 50,
-                    //   color: Colors.blue[400],
-                    //     shape: RoundedRectangleBorder(
-                    //       borderRadius: BorderRadius.circular(2)),
-                    //   child: const Text("PROJECTS", style: TextStyle(
-                    //     color: Colors.white
-                    //   )),
-                    // ),
 
                   ],
                 ),
@@ -136,7 +124,7 @@ class BodyContent extends StatelessWidget {
           ),
         ),
 
-        const About(),
+        About(),
 
         const Project(),
 

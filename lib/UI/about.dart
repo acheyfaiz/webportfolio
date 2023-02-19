@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/UI/home.dart';
 
 class About extends StatelessWidget {
-  const About({Key? key}) : super(key: key);
+  About({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +21,7 @@ class About extends StatelessWidget {
     return Responsive.isLargeScreen(context) ? _web(context, list) : _mobile(context, list);
   }
 
+  bool _isHovering = false;
   Widget _web(context, List list){
     final Size size = MediaQuery.of(context).size;
     return Container(
@@ -106,24 +107,11 @@ class About extends StatelessWidget {
 
                         const SizedBox(height: 30),
 
-                        const Text("Currently, i work at Bizapp Ventures as a Mobile Apps Developer. I like to craft solid and scalable frontend products with great user experience. For the past 3 years, i have successfully delivered 4 projects related to my company objective.",
+                        const Text("From Big Data Technology as intern to Bizapp Ventures Sdn Bhd, I was sharpened to develop mobile apps by using Flutter framework until I success to deliver in the project section. "
+                            "Currently, I work at Bizapp Ventures as a Mobile Apps Developer. I like to craft solid and scalable frontend products with great user experience. For the past 3 years, i have successfully delivered 4 projects related to my company objective.",
                             style: TextStyle(
                                 fontSize: 16, height: 1.6
                             )),
-
-                        const Text("Check out some of my work in the Projects section.\n",
-                            style: TextStyle(
-                                fontSize: 16, height: 1.6
-                            )),
-
-                        const SizedBox(height: 20),
-
-                        const Text("I'm open to job opportunities where i can contribute, learn and grow.\nFeel free to connect and follow me on my Linkedin. "
-                            "If you have a good opportunity that matches my skills and experience\nthen don't hesitate to contact me.",
-                            style: TextStyle(
-                                fontSize: 16, height: 1.6
-                            )
-                        ),
 
                         const SizedBox(height: 30),
 
@@ -136,16 +124,25 @@ class About extends StatelessWidget {
                         StatefulBuilder(
                           builder: (context, setState)=> Wrap(
                             runSpacing: 10,
-                            children: list.map((e) => Container(
-                              decoration: BoxDecoration(
-                                  color: const Color(0xE7E7E7E7),
-                                  borderRadius: BorderRadius.circular(3)
+                            children: list.map((e) => MouseRegion(
+                              onEnter: (event) => setState(() => _isHovering = true),
+                              onExit: (event) => setState(() => _isHovering = false),
+                              child: AnimatedContainer(
+                                duration: const Duration(milliseconds: 200),
+                                curve: Curves.easeInOut,
+                                transform: _isHovering ? Matrix4.rotationZ(0.1) : Matrix4.rotationZ(0),
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      color: const Color(0xE7E7E7E7),
+                                      borderRadius: BorderRadius.circular(3)
+                                  ),
+                                  margin: const EdgeInsets.only(right: 10),
+                                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+                                  child: Text(e, style: const TextStyle(
+                                      fontSize: 14, color: Colors.black54, fontWeight: FontWeight.bold
+                                  )),
+                                ),
                               ),
-                              margin: const EdgeInsets.only(right: 10),
-                              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
-                              child: Text(e, style: const TextStyle(
-                                  fontSize: 14, color: Colors.black54, fontWeight: FontWeight.bold
-                              )),
                             )).toList(),
                           ),
                         ),
@@ -218,19 +215,11 @@ class About extends StatelessWidget {
 
           const SizedBox(height: 30),
 
-          const Text("I'm a Frontend Mobile Developer using Flutter framework. Check out some of my work in the Projects section. Feel free to connect or follow me on my Linkedin",
+          const Text("From Big Data Technology as intern to Bizapp Ventures Sdn Bhd, I was sharpened to develop mobile apps by using Flutter framework until I success to deliver in the project section. "
+              "Currently, I work at Bizapp Ventures as a Mobile Apps Developer. I like to craft solid and scalable frontend products with great user experience. For the past 3 years, i have successfully delivered 4 projects related to my company objective.",
               style: TextStyle(
                   fontSize: 16, height: 1.6
               )),
-
-          const SizedBox(height: 20),
-
-          const Text("I'm open to job opportunities where i can contribute, learn and grow.\n"
-              "If you have a good opportunity that matches my skills and experience\nthen don't hesitate to contact me",
-              style: TextStyle(
-                  fontSize: 16, height: 1.6
-              )
-          ),
 
           const SizedBox(height: 30),
 
