@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       scrollBehavior: MyCustomScrollBehavior(),
-      title: 'viewtofaizdesk (Web Portfolio)',
+      title: 'Hola Anonymous!',
       debugShowCheckedModeBanner: false,
       home: const Home(),
       theme: ThemeData(
