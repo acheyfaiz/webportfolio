@@ -266,7 +266,7 @@ class Project extends StatelessWidget {
 
                   /// image
                   SizedBox(
-                    width: size.width * .9,
+                    width: size.width ,
                     height: 500,
                     child: ListView(
                       scrollDirection: Axis.horizontal,
