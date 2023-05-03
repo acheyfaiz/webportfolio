@@ -16,6 +16,9 @@ class About extends StatelessWidget {
       "PHP",
       "Laravel",
       "Nodejs",
+      "REST Api",
+      "Android Development",
+      "CI/CD",
     ];
 
     return Responsive.isLargeScreen(context) ? _web(context, list) : _mobile(context, list);
@@ -32,7 +35,7 @@ class About extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
 
-          const SizedBox(height: 40),
+          const SizedBox(height: 60),
 
           Text("ABOUT ME", style: GoogleFonts.poppins(
               fontSize: 30, fontWeight: FontWeight.w700
@@ -107,15 +110,17 @@ class About extends StatelessWidget {
 
                         const SizedBox(height: 30),
 
-                        const Text("From Big Data Technology as intern to Bizapp Ventures Sdn Bhd, I was sharpened to develop mobile apps by using Flutter framework until I success to deliver in the project section. "
-                            "Currently, I work at Bizapp Ventures as a Mobile Apps Developer. I like to craft solid and scalable frontend products with great user experience. For the past 3 years, i have successfully delivered 4 projects related to my company objective.",
-                            style: TextStyle(
-                                fontSize: 16, height: 1.6
-                            )),
+                        // const Text("From Big Data Technology as intern to Bizapp Ventures Sdn Bhd, I was sharpened to develop mobile apps by using Flutter framework until I success to deliver in the project section. "
+                        //     "Currently, I work at Bizapp Ventures as a Mobile Apps Developer. I like to craft solid and scalable frontend products with great user experience. For the past 3 years, i have successfully delivered 4 projects related to my company objective.",
+                        //     style: TextStyle(
+                        //         fontSize: 16, height: 1.6
+                        //     )),
+
+                        const AboutMeDesc(),
 
                         const SizedBox(height: 30),
 
-                        const Text("My Skills", style: TextStyle(
+                        const Text("My Knowledge", style: TextStyle(
                           fontSize: 22, fontWeight: FontWeight.bold,
                         )),
 
@@ -158,7 +163,7 @@ class About extends StatelessWidget {
             ),
           ),
 
-          const SizedBox(height: 50),
+          const SizedBox(height: 80),
 
         ],
       ),
@@ -215,15 +220,11 @@ class About extends StatelessWidget {
 
           const SizedBox(height: 30),
 
-          const Text("From Big Data Technology as intern to Bizapp Ventures Sdn Bhd, I was sharpened to develop mobile apps by using Flutter framework until I success to deliver in the project section. "
-              "Currently, I work at Bizapp Ventures as a Mobile Apps Developer. I like to craft solid and scalable frontend products with great user experience. For the past 3 years, i have successfully delivered 4 projects related to my company objective.",
-              style: TextStyle(
-                  fontSize: 16, height: 1.6
-              )),
+          const AboutMeDesc(),
 
           const SizedBox(height: 30),
 
-          const Text("My Skills", style: TextStyle(
+          const Text("My Knowledge", style: TextStyle(
             fontSize: 22, fontWeight: FontWeight.bold,
           )),
 
@@ -251,3 +252,20 @@ class About extends StatelessWidget {
   }
 
 }
+
+/// About me description
+class AboutMeDesc extends StatelessWidget {
+  const AboutMeDesc({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Text("Hi, I'm Muhammad Faiz, a mobile app developer with 4 years of experience in building innovative and user-friendly apps for both iOS and Android platform. "
+        "I have a strong foundation in programming languages such as Dart and Kotlin. I'm well-versed in using frameworks like Flutter for cross-platform development. "
+        "Additionally, I have experience in integrating APIs, payment gateways, and third-party services.",
+        style: TextStyle(
+            fontSize: 16, height: 1.6
+        )
+    );
+  }
+}
+
