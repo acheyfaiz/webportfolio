@@ -111,7 +111,7 @@ class BodyContent extends StatelessWidget {
 
                     const SizedBox(height: 20),
 
-                    const Text("Ready to explore my portfolio?  Let's check it out!", textAlign: TextAlign.center, style: TextStyle(
+                    const Text("Are you ready to explore my portfolio?  Let's check it out!", textAlign: TextAlign.center, style: TextStyle(
                         fontSize: 16,
                     )),
 

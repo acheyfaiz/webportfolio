@@ -139,7 +139,10 @@ class About extends StatelessWidget {
                                 child: Container(
                                   decoration: BoxDecoration(
                                       color: const Color(0xE7E7E7E7),
-                                      borderRadius: BorderRadius.circular(3)
+                                      borderRadius: BorderRadius.circular(3),
+                                    boxShadow: [
+                                      boxShadow(),
+                                    ],
                                   ),
                                   margin: const EdgeInsets.only(right: 10),
                                   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
@@ -234,6 +237,9 @@ class About extends StatelessWidget {
             runSpacing: 10,
             children: list.map((e) => Container(
               decoration: BoxDecoration(
+                  boxShadow: [
+                    boxShadow(),
+                  ],
                   color: const Color(0xE7E7E7E7),
                   borderRadius: BorderRadius.circular(3)),
               margin: const EdgeInsets.only(right: 10),
@@ -247,6 +253,19 @@ class About extends StatelessWidget {
           const SizedBox(height: 80),
 
         ],
+      ),
+    );
+  }
+
+  /// for shadow color - knowledge section
+  BoxShadow boxShadow(){
+    return BoxShadow(
+      color: Colors.blue[400]!,
+      blurRadius: 1.0,
+      spreadRadius: 0.0,
+      offset: const Offset(
+        0.0,
+        2.0,
       ),
     );
   }
