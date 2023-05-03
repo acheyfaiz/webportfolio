@@ -36,8 +36,12 @@ class Footer extends StatelessWidget {
               const SizedBox(height: 30),
 
               /// copyright text
-              const Text("© Copyright 2023. Made with Flutter 💙 (v1.2.0)", textAlign: TextAlign.center, style: TextStyle(
-                color: Colors.white, fontSize: 13
+              /// (v1.2.1)
+              const Text("© Copyright 2023. Hand-Made with Flutter 💙", textAlign: TextAlign.center, style: TextStyle(
+                color: Colors.white, fontSize: 12
+              )),
+              const Text("Last updated: 03/05/2023", textAlign: TextAlign.center, style: TextStyle(
+                  color: Colors.white, fontSize: 11, fontStyle: FontStyle.italic
               ))
 
             ],
@@ -56,7 +60,7 @@ class FooterDesc extends StatelessWidget {
 
     List<FooterOption> list = [
       FooterOption(url: 'https://github.com/acheyfaiz', icon: FontAwesomeIcons.github),
-      FooterOption(url: 'https://twitter.com/mhdfaizz_', icon: FontAwesomeIcons.twitter),
+      //FooterOption(url: 'https://twitter.com/mhdfaizz_', icon: FontAwesomeIcons.twitter),
       FooterOption(url: 'https://www.linkedin.com/in/muhdfaizz/', icon: FontAwesomeIcons.linkedin),
     ];
 
