@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/UI/aware_project.dart';
+import 'package:portfolio/UI/bizapp_project.dart';
+import 'package:portfolio/UI/bizappay_project.dart';
 import 'package:portfolio/UI/home.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
+import 'package:portfolio/UI/quranly_project.dart';
 
 void main() {
   usePathUrlStrategy();
@@ -10,17 +15,55 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
+  /// for route navigation
+  final _router = GoRouter(
+    routes: [
+
+      GoRoute(
+        path: '/',
+        name: 'home',
+        builder: (context, state) => const Home(),
+      ),
+
+      GoRoute(
+        path: '/bizappx',
+        name: 'bizappx',
+        builder: (context, state) => const BizappProject(),
+      ),
+
+      GoRoute(
+        path: '/bizappay',
+        name: 'bizappay',
+        builder: (context, state) => const BizappayProject(),
+      ),
+
+      GoRoute(
+        path: '/quranly',
+        name: 'quranly',
+        builder: (context, state) => const QuranlyProject(),
+      ),
+
+      GoRoute(
+        path: '/aware',
+        name: 'aware',
+        builder: (context, state) => const AwareProject(),
+      ),
+
+    ],
+  );
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: _router,
       scrollBehavior: MyCustomScrollBehavior(),
-      title: 'Hola Anonymous!',
+      title: 'Hola!',
       debugShowCheckedModeBanner: false,
-      home: const Home(),
+      // home: const Home(),
       theme: ThemeData(
         textTheme: GoogleFonts.poppinsTextTheme()
       ),
-      //home: DinnerTemplate(),
     );
   }
 }
@@ -33,6 +76,7 @@ class MyCustomScrollBehavior extends MaterialScrollBehavior {
     PointerDeviceKind.mouse,
     PointerDeviceKind.stylus,
     PointerDeviceKind.trackpad,
+    PointerDeviceKind.unknown,
   };
 }
 
