@@ -140,9 +140,9 @@ class About extends StatelessWidget {
                                   decoration: BoxDecoration(
                                       color: const Color(0xE7E7E7E7),
                                       borderRadius: BorderRadius.circular(3),
-                                    boxShadow: [
-                                      boxShadow(),
-                                    ],
+                                    // boxShadow: [
+                                    //   boxShadow(),
+                                    // ],
                                   ),
                                   margin: const EdgeInsets.only(right: 10),
                                   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
@@ -237,9 +237,9 @@ class About extends StatelessWidget {
             runSpacing: 10,
             children: list.map((e) => Container(
               decoration: BoxDecoration(
-                  boxShadow: [
-                    boxShadow(),
-                  ],
+                  // boxShadow: [
+                  //   boxShadow(),
+                  // ],
                   color: const Color(0xE7E7E7E7),
                   borderRadius: BorderRadius.circular(3)),
               margin: const EdgeInsets.only(right: 10),
