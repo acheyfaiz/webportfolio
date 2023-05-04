@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/UI/aware_project.dart';
-import 'package:portfolio/UI/bizapp_project.dart';
-import 'package:portfolio/UI/bizappay_project.dart';
-
 import 'package:portfolio/UI/home.dart';
-import 'package:portfolio/UI/quranly_project.dart';
 
 class Project extends StatelessWidget {
   const Project({Key? key}) : super(key: key);
@@ -19,7 +15,7 @@ class Project extends StatelessWidget {
           title: "Bizapp X",
           // desc: "Bizapp is an application available in Android, IOS and web platforms. Bizapp is utilised by online and offline businesses, basic agents, dropship agents, stockists and headquarters to manage order data. "
           //     "Any entreprenuers should engage with E-commerce or they will be left behind. Bizapp has a clear and easy interface that will make entreprenuers fell in love and help their business to grow.",
-          desc: "BizApp X is a new-look BizApp application, which help you as agent or dropship to follow HQ/Stokist or monitor your sales",
+          desc: "BizApp X is a new-look BizApp application, which help you as agent or dropship to follow HQ/Stockist or monitor your sales",
           image: "images/bizapp1.jpg",
           image2: "images/bizapp2.jpg",
           image3: "images/bizapp3.jpg",
@@ -181,10 +177,10 @@ class Project extends StatelessWidget {
                             
                             MaterialButton(
                                 onPressed: (){
-                                  e.title == "Bizapp X" ? _showbizapp(context, project, "1") :
-                                  e.title == "Bizappay" ? _showbizapp(context, project, "2") :
-                                  e.title == "Quranly" ? _showbizapp(context, project, "3") :
-                                  e.title == "Aware" ? _showbizapp(context, project, "4") : _showpopup(context);
+                                  e.title == "Bizapp X" ? GoRouter.of(context).push('/bizappx') :
+                                  e.title == "Bizappay" ? GoRouter.of(context).push('/bizappay') :
+                                  e.title == "Quranly" ? GoRouter.of(context).push('/quranly') :
+                                  e.title == "Aware" ? GoRouter.of(context).push('/aware') : _showpopup(context);
                                 },
                               color: Colors.blue[400],
                               padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
@@ -299,10 +295,10 @@ class Project extends StatelessWidget {
 
                   MaterialButton(
                     onPressed: (){
-                      e.title == "Bizapp X" ? _showbizapp(context, project, "1") :
-                      e.title == "Bizappay" ? _showbizapp(context, project, "2") :
-                      e.title == "Quranly" ? _showbizapp(context, project, "3") :
-                      e.title == "Aware" ? _showbizapp(context, project, "4") : _showpopup(context);
+                      e.title == "Bizapp X" ? GoRouter.of(context).push('/bizappx') :
+                      e.title == "Bizappay" ? GoRouter.of(context).push('/bizappay') :
+                      e.title == "Quranly" ? GoRouter.of(context).push('/quranly') :
+                      e.title == "Aware" ? GoRouter.of(context).push('/aware') : _showpopup(context);
                     },
                     color: Colors.blue[400],
                     padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
@@ -335,20 +331,6 @@ class Project extends StatelessWidget {
       ),
     );
   }
-
-  _showbizapp(context, List<ProjectDetail> project, String num){
-    return showDialog(
-      barrierDismissible: true,
-      context: context,
-      builder: (BuildContext context) {
-        return num == "1" ? const BizappProject()
-            : num == "2" ? const BizappayProject()
-            : num == "3" ? const QuranlyProject()
-            : num == "4" ? const AwareProject() : const SizedBox();
-      },
-    );
-  }
-
 
 }
 
