@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:html' as html;
 
@@ -9,14 +10,18 @@ class ConstantsWidget {
   /// constant widget for popup case study
   MaterialButton closepopup(context){
     return MaterialButton(
-      onPressed: ()=> Navigator.pop(context),
-      elevation: 0,
-      color: Colors.white,
+      padding: const EdgeInsets.symmetric(horizontal: 83),
       hoverColor: Colors.blue[400],
-      minWidth: 100,
-      padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-      child: const Text("Close", style: TextStyle(
-          color: Colors.black)),
+
+      // onPressed: ()=> GoRouter.of(context).pop(true),
+      onPressed: ()=> GoRouter.of(context).push("/"),
+      height: 50,
+      color: Responsive.isLargeScreen(context) ? Colors.grey[200] : Colors.blue[400],
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(80)),
+      child: Text("Go Back", style: TextStyle(
+          fontSize: 13, color: Responsive.isSmallScreen(context) ? Colors.white : Colors.black
+      )),
     );
   }
 
