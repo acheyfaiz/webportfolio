@@ -58,7 +58,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: _router,
       scrollBehavior: MyCustomScrollBehavior(),
-      title: 'Hola!',
+      title: 'Faiz | Portfolio',
       debugShowCheckedModeBanner: false,
       // home: const Home(),
       theme: ThemeData(
