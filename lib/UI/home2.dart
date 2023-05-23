@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/UI/connect.dart';
+import 'package:portfolio/UI/education.dart';
 import 'package:portfolio/UI/home.dart';
+import 'package:portfolio/UI/work_exp.dart';
 
 import 'about.dart';
 import 'footer.dart';
@@ -125,6 +127,10 @@ class BodyContent extends StatelessWidget {
         ),
 
         About(),
+
+        const Education(),
+
+        const WorkExperience(),
 
         const Project(),
 
