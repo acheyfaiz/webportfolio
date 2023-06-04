@@ -30,6 +30,11 @@ class Education extends StatelessWidget {
               fontSize: 30, fontWeight: FontWeight.w700
           )),
 
+          Container(
+            height: 3, color: Colors.blue[400],
+            width: 30, margin: const EdgeInsets.only(top: 30, bottom: 20),
+          ),
+
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: ListView.builder(

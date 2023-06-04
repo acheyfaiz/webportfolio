@@ -77,7 +77,7 @@ class BizappProject extends StatelessWidget {
 
                   /// tools
                   ConstantsWidget().toolstext(),
-                  Text("Flutter (Provider State Management), Dart, Android Studio, RestAPI", style: GoogleFonts.poppins(
+                  Text("Flutter (Provider State Management), Dart, Android Studio, RestAPI, CI/CD Pipeline", style: GoogleFonts.poppins(
                       fontSize: 16, color: Colors.black54, fontWeight: FontWeight.w500
                   )),
                   const SizedBox(height: 50),

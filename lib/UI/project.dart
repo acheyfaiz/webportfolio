@@ -38,6 +38,18 @@ class Project extends StatelessWidget {
           urlios: "https://apps.apple.com/my/app/bizappay/id1525672898"),
 
       ProjectDetail(
+          title: "Bizappos",
+          desc: "With various features and powerful devices, you can easily manage you Point-of-Sales (POS) and focus to expand your business.",
+          image: "images/bizappos1.jpg",
+          image2: "images/bizappos2.jpg",
+          image3: "images/bizappos3.jpg",
+          image4: "images/bizappos4.jpg",
+          image5: "images/bizappos5.jpg",
+          image6: "images/bizappos5.jpg",
+          urlAndroid: "https://play.google.com/store/apps/details?id=com.bizapp_pos",
+          urlios: "https://apps.apple.com/us/app/bizappos/id1638684895"),
+
+      ProjectDetail(
           title: "Quranly",
           desc: "A habit-building Quran app that brings a habit-centered, routine-driven approach to Quran reading. It gives you a visual tracker representation of your daily progress to stay motivated to reach your goals. ",
           image: "images/quranly1.jpg",
@@ -179,6 +191,7 @@ class Project extends StatelessWidget {
                                 onPressed: (){
                                   e.title == "Bizapp X" ? GoRouter.of(context).push('/bizappx') :
                                   e.title == "Bizappay" ? GoRouter.of(context).push('/bizappay') :
+                                  e.title == "Bizappos" ? GoRouter.of(context).push('/bizappos') :
                                   e.title == "Quranly" ? GoRouter.of(context).push('/quranly') :
                                   e.title == "Aware" ? GoRouter.of(context).push('/aware') : _showpopup(context);
                                 },

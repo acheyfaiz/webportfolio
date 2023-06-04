@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/UI/aware_project.dart';
 import 'package:portfolio/UI/bizapp_project.dart';
 import 'package:portfolio/UI/bizappay_project.dart';
+import 'package:portfolio/UI/bizappos_project.dart';
 import 'package:portfolio/UI/home.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
@@ -36,6 +37,12 @@ class MyApp extends StatelessWidget {
         path: '/bizappay',
         name: 'bizappay',
         builder: (context, state) => const BizappayProject(),
+      ),
+
+      GoRoute(
+        path: '/bizappos',
+        name: 'bizappos',
+        builder: (context, state) => const BizapposProject(),
       ),
 
       GoRoute(
