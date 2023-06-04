@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/UI/aware_project.dart';
-import 'package:portfolio/UI/bizapp_project.dart';
-import 'package:portfolio/UI/bizappay_project.dart';
-import 'package:portfolio/UI/bizappos_project.dart';
+import 'package:portfolio/UI/Project/aware_project.dart';
+import 'package:portfolio/UI/Project/bizapp_project.dart';
+import 'package:portfolio/UI/Project/bizappay_project.dart';
+import 'package:portfolio/UI/Project/quranly_project.dart';
 import 'package:portfolio/UI/home.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
-import 'package:portfolio/UI/quranly_project.dart';
+
+import 'UI/Project/bizappos_project.dart';
 
 void main() {
   usePathUrlStrategy();

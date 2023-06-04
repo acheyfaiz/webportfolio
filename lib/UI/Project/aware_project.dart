@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/UI/bizapp_project.dart';
-import 'package:portfolio/UI/constant.dart';
+import 'package:portfolio/UI/Project/bizapp_project.dart';
 import 'package:portfolio/UI/footer.dart';
 import 'package:portfolio/UI/home.dart';
 import 'package:portfolio/UI/project.dart';
 
-class BizapposProject extends StatelessWidget {
-  const BizapposProject({super.key});
+import '../constant.dart';
+
+class AwareProject extends StatelessWidget {
+  const AwareProject({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     List<String> images = [
-      "images/bizappos1.jpg",
-      "images/bizappos2.jpg",
-      "images/bizappos3.jpg",
-      "images/bizappos4.jpg",
-      "images/bizappos5.jpg",
+      "images/aware1.jpg",
+      "images/aware2.jpg",
+      "images/aware3.jpg",
+      "images/aware4.jpg",
+      "images/aware5.jpg",
+      "images/aware6.jpg",
     ];
 
     return Scaffold(
@@ -26,7 +28,7 @@ class BizapposProject extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            const Header(title: "Bizappos", subtitle: "Manage your Point-of-Sale (POS) with our ultimate software"),
+            const Header(title: "Aware", subtitle: "Please, stop doing pornography habit!"),
 
             const SizedBox(height: 50),
 
@@ -57,9 +59,9 @@ class BizapposProject extends StatelessWidget {
                   ConstantsWidget().prodetailtext(),
                   Padding(
                     padding: EdgeInsets.only(right: Responsive.isLargeScreen(context) ? 30 : 0),
-                    child: Text("BizApp POS is a Point-of-Sale focused app that are designed to help Ultimate & Privilege package users "
-                        "utilise our existing POS module from our website and allow them to connect with other "
-                        "POS related appliances such as cash drawers, thermal printers, and so on. This software is available either for your smartphone, tablet, desktop and coming soon to web version.",
+                    child: Text("Aware apps is an apps that help you to free-porn addicted which offers mindfulness exercises and meditations to help users improve their mental health and reduce stress. "
+                        "This app is designed for people of all ages and backgrounds, with the aim of promoting better life, mental health and well-being.",
+
                         textAlign: TextAlign.justify, style: GoogleFonts.poppins(
                             fontSize: 16
                         )),
@@ -75,7 +77,7 @@ class BizapposProject extends StatelessWidget {
 
                   /// tools
                   ConstantsWidget().toolstext(),
-                  Text("Flutter, Dart, Kotlin, Android Studio, RestAPI, Third party Integration, CI/CD Pipeline", style: GoogleFonts.poppins(
+                  Text("Flutter (Provider State Management), Dart, Android Studio, SQLite, Figma/Adobe XD", style: GoogleFonts.poppins(
                       fontSize: 16, color: Colors.black54, fontWeight: FontWeight.w500
                   )),
                   const SizedBox(height: 50),
@@ -89,9 +91,9 @@ class BizapposProject extends StatelessWidget {
                     runSpacing: 10,
                     spacing: 10,
                     children: [
-                      ConstantsWidget().buttonAndroidpopup(context, url: "https://play.google.com/store/apps/details?id=com.bizapp_pos"),
-                      ConstantsWidget().buttonIospopup(context, url: "https://apps.apple.com/us/app/bizappos/id1638684895"),
-                      ConstantsWidget().buttonwebpopup(context, url: "https://www.bizappos.com"),
+                      ConstantsWidget().buttonAndroidpopup(context, url: "https://play.google.com/store/apps/details?id=au.com.awareacademy&hl=en&gl=US"),
+                      ConstantsWidget().buttonIospopup(context, url: "https://apps.apple.com/my/app/aware-academy/id1611163995"),
+                      ConstantsWidget().buttonwebpopup(context, url: "https://awareacademy.com.au/"),
                       ConstantsWidget().closepopup(context),
                     ],
                   ),

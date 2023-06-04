@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/UI/bizapp_project.dart';
+import 'package:portfolio/UI/Project/bizapp_project.dart';
 import 'package:portfolio/UI/footer.dart';
 import 'package:portfolio/UI/home.dart';
 import 'package:portfolio/UI/project.dart';
 
-import 'constant.dart';
+import '../constant.dart';
 
-class AwareProject extends StatelessWidget {
-  const AwareProject({Key? key}) : super(key: key);
+class QuranlyProject extends StatelessWidget {
+  const QuranlyProject({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     List<String> images = [
-      "images/aware1.jpg",
-      "images/aware2.jpg",
-      "images/aware3.jpg",
-      "images/aware4.jpg",
-      "images/aware5.jpg",
-      "images/aware6.jpg",
+      "images/quranly1.jpg",
+      "images/quranly2.jpg",
+      "images/quranly3.jpg",
+      "images/quranly4.jpg",
+      "images/quranly5.jpg",
+      "images/quranly6.jpg",
     ];
 
     return Scaffold(
@@ -28,7 +28,7 @@ class AwareProject extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            const Header(title: "Aware", subtitle: "Please, stop doing pornography habit!"),
+            const Header(title: "Quranly", subtitle: "Your peaceful book for guide in afterlife"),
 
             const SizedBox(height: 50),
 
@@ -59,8 +59,11 @@ class AwareProject extends StatelessWidget {
                   ConstantsWidget().prodetailtext(),
                   Padding(
                     padding: EdgeInsets.only(right: Responsive.isLargeScreen(context) ? 30 : 0),
-                    child: Text("Aware apps is an apps that help you to free-porn addicted which offers mindfulness exercises and meditations to help users improve their mental health and reduce stress. "
-                        "This app is designed for people of all ages and backgrounds, with the aim of promoting better life, mental health and well-being.",
+                    child: Text("The Quranly app is a comprehensive Islamic application that provides Muslims with an array of tools and resources to learn and practice their religion. "
+                        "The app includes a digital version of the Quran with multiple translations, a searchable database of Islamic texts and teachings, and various features to help users read and memorize the Quran. "
+                        "Futhermore, the app includes a prayer timetable, daily reminders to read and study the Quran, and a social network of like-minded individuals to share and discuss religious topics.\n\n"
+                        "The challeges to create this apps is to track user reading progress and store into local database by using SQlite software. The letter of huruf quran is quite different to display since the way of reading "
+                        "is from right-to-left.",
 
                         textAlign: TextAlign.justify, style: GoogleFonts.poppins(
                             fontSize: 16
@@ -91,9 +94,8 @@ class AwareProject extends StatelessWidget {
                     runSpacing: 10,
                     spacing: 10,
                     children: [
-                      ConstantsWidget().buttonAndroidpopup(context, url: "https://play.google.com/store/apps/details?id=au.com.awareacademy&hl=en&gl=US"),
-                      ConstantsWidget().buttonIospopup(context, url: "https://apps.apple.com/my/app/aware-academy/id1611163995"),
-                      ConstantsWidget().buttonwebpopup(context, url: "https://awareacademy.com.au/"),
+                      ConstantsWidget().buttonAndroidpopup(context, url: "https://play.google.com/store/apps/details?id=com.quranly.app&hl=en&gl=US"),
+                      ConstantsWidget().buttonIospopup(context, url: "https://apps.apple.com/my/app/quranly/id1559233786"),
                       ConstantsWidget().closepopup(context),
                     ],
                   ),

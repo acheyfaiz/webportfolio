@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/UI/bizapp_project.dart';
+import 'package:portfolio/UI/Project/bizapp_project.dart';
 import 'package:portfolio/UI/footer.dart';
 import 'package:portfolio/UI/home.dart';
 import 'package:portfolio/UI/project.dart';
 
-import 'constant.dart';
+import '../constant.dart';
 
-class QuranlyProject extends StatelessWidget {
-  const QuranlyProject({Key? key}) : super(key: key);
+class BizappayProject extends StatelessWidget {
+  const BizappayProject({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     List<String> images = [
-      "images/quranly1.jpg",
-      "images/quranly2.jpg",
-      "images/quranly3.jpg",
-      "images/quranly4.jpg",
-      "images/quranly5.jpg",
-      "images/quranly6.jpg",
+      "images/bizappay1.jpg",
+      "images/bizappay2.jpg",
+      "images/bizappay3.jpg",
+      "images/bizappay4.jpg",
+      "images/bizappay5.jpg",
+      "images/bizappay6.jpg",
     ];
 
     return Scaffold(
@@ -28,7 +28,7 @@ class QuranlyProject extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 
-            const Header(title: "Quranly", subtitle: "Your peaceful book for guide in afterlife"),
+            const Header(title: "Bizappay", subtitle: "Your payment gateway solution"),
 
             const SizedBox(height: 50),
 
@@ -59,11 +59,10 @@ class QuranlyProject extends StatelessWidget {
                   ConstantsWidget().prodetailtext(),
                   Padding(
                     padding: EdgeInsets.only(right: Responsive.isLargeScreen(context) ? 30 : 0),
-                    child: Text("The Quranly app is a comprehensive Islamic application that provides Muslims with an array of tools and resources to learn and practice their religion. "
-                        "The app includes a digital version of the Quran with multiple translations, a searchable database of Islamic texts and teachings, and various features to help users read and memorize the Quran. "
-                        "Futhermore, the app includes a prayer timetable, daily reminders to read and study the Quran, and a social network of like-minded individuals to share and discuss religious topics.\n\n"
-                        "The challeges to create this apps is to track user reading progress and store into local database by using SQlite software. The letter of huruf quran is quite different to display since the way of reading "
-                        "is from right-to-left.",
+                    child: Text("Bizappay is a online payment platform services for business and individual with a low rate charge. You can create, track and record transaction history "
+                        "in one web-mobile application system to empower your business with the right tools to collect and record online payments. Bizappay also provides real-time reporting and analytics, customizable payment pages, and fraud prevention measures.\n\n"
+                        "With current integration, Bizappay user have choices to choose payment method "
+                        "either via FPX online banking, Shoppepay and Grabpay. Users also can use local or foreign credit card for the same purpose too.",
 
                         textAlign: TextAlign.justify, style: GoogleFonts.poppins(
                             fontSize: 16
@@ -73,14 +72,14 @@ class QuranlyProject extends StatelessWidget {
 
                   /// role
                   ConstantsWidget().roletext(),
-                  Text("Programmer", style: GoogleFonts.poppins(
+                  Text("Lead Developer", style: GoogleFonts.poppins(
                       fontSize: 16, color: Colors.black54, fontWeight: FontWeight.w500
                   )),
                   const SizedBox(height: 50),
 
                   /// tools
                   ConstantsWidget().toolstext(),
-                  Text("Flutter (Provider State Management), Dart, Android Studio, SQLite, Figma/Adobe XD", style: GoogleFonts.poppins(
+                  Text("Flutter (Provider State Management), Dart, Android Studio, RestAPI", style: GoogleFonts.poppins(
                       fontSize: 16, color: Colors.black54, fontWeight: FontWeight.w500
                   )),
                   const SizedBox(height: 50),
@@ -94,8 +93,9 @@ class QuranlyProject extends StatelessWidget {
                     runSpacing: 10,
                     spacing: 10,
                     children: [
-                      ConstantsWidget().buttonAndroidpopup(context, url: "https://play.google.com/store/apps/details?id=com.quranly.app&hl=en&gl=US"),
-                      ConstantsWidget().buttonIospopup(context, url: "https://apps.apple.com/my/app/quranly/id1559233786"),
+                      ConstantsWidget().buttonAndroidpopup(context, url: "https://play.google.com/store/apps/details?id=com.bizapp.bizappay&hl=en&gl=US"),
+                      ConstantsWidget().buttonIospopup(context, url: "https://apps.apple.com/my/app/bizappay/id1525672898"),
+                      ConstantsWidget().buttonwebpopup(context, url: "https://www.bizappay.my"),
                       ConstantsWidget().closepopup(context),
                     ],
                   ),
