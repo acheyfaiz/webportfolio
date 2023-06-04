@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/UI/home.dart';
 
 class About extends StatelessWidget {
-  About({Key? key}) : super(key: key);
+  const About({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

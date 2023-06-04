@@ -15,8 +15,9 @@ class Footer extends StatelessWidget {
       child: ColoredBox(
         color: Colors.black,
         child: Padding(
-          padding: Responsive.isLargeScreen(context) ? const EdgeInsets.symmetric(horizontal: 140, vertical: 50)
-              : const EdgeInsets.symmetric(horizontal: 5, vertical: 50),
+          padding: Responsive.isLargeScreen(context) ? const EdgeInsets.symmetric(horizontal: 140, vertical: 100)
+              : Responsive.isTabScreen(context) ? const EdgeInsets.symmetric(horizontal: 40, vertical: 100)
+              : const EdgeInsets.symmetric(horizontal: 5, vertical: 80),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -36,11 +37,11 @@ class Footer extends StatelessWidget {
               const SizedBox(height: 30),
 
               /// copyright text
-              /// (v1.5.0)
+              /// (v1.5.1)
               const Text("© Copyright 2023 handmade with Flutter 💙", textAlign: TextAlign.center, style: TextStyle(
                 color: Colors.white, fontSize: 12
               )),
-              const Text("Last updated: 3 June 2023", textAlign: TextAlign.center, style: TextStyle(
+              const Text("Last updated: 03 June 2023", textAlign: TextAlign.center, style: TextStyle(
                   color: Colors.white, fontSize: 11, fontStyle: FontStyle.italic
               ))
 
@@ -64,7 +65,7 @@ class FooterDesc extends StatelessWidget {
       FooterOption(url: 'https://www.linkedin.com/in/muhdfaizz/', icon: FontAwesomeIcons.linkedin),
     ];
 
-    return Responsive.isLargeScreen(context) ? _web(list) : _mobile(list);
+    return Responsive.isLargeScreen(context) || Responsive.isTabScreen(context) ? _web(list) : _mobile(list);
   }
 
   _web(List<FooterOption> list){
@@ -73,10 +74,10 @@ class FooterDesc extends StatelessWidget {
       children: [
 
         /// nama
-        Column(
+        const Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
 
             Text("MUHAMMAD FAIZ", style: TextStyle(
                 fontSize: 16, fontWeight: FontWeight.bold,
@@ -139,10 +140,10 @@ class FooterDesc extends StatelessWidget {
       children: [
 
         /// nama
-        Column(
+        const Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
+          children: [
 
             Text("MUHAMMAD FAIZ", style: TextStyle(
                 fontSize: 16, fontWeight: FontWeight.bold,

@@ -44,8 +44,8 @@ class _Home2State extends State<Home2> {
         child: SingleChildScrollView(
           controller: controller,
           physics: const BouncingScrollPhysics(),
-          child: Column(
-            children: const [
+          child: const Column(
+            children: [
 
               BodyContent(),
 
@@ -126,7 +126,7 @@ class BodyContent extends StatelessWidget {
           ),
         ),
 
-        About(),
+        const About(),
 
         const Education(),
 

@@ -17,6 +17,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  MyApp({super.key});
 
   /// for route navigation
   final _router = GoRouter(
