@@ -13,6 +13,7 @@ class About extends StatelessWidget {
       "Firebase",
       "CSS",
       "HTML",
+      "Javascript",
       "PHP",
       "Laravel",
       "Nodejs",
@@ -24,7 +25,7 @@ class About extends StatelessWidget {
     return Responsive.isLargeScreen(context) ? _web(context, list) : _mobile(context, list);
   }
 
-  bool _isHovering = false;
+  final bool _isHovering = false;
   Widget _web(context, List list){
     final Size size = MediaQuery.of(context).size;
     return Container(
@@ -126,34 +127,54 @@ class About extends StatelessWidget {
 
                         const SizedBox(height: 30),
 
-                        StatefulBuilder(
-                          builder: (context, setState)=> Wrap(
-                            runSpacing: 10,
-                            children: list.map((e) => MouseRegion(
-                              onEnter: (event) => setState(() => _isHovering = true),
-                              onExit: (event) => setState(() => _isHovering = false),
-                              child: AnimatedContainer(
-                                duration: const Duration(milliseconds: 200),
-                                curve: Curves.easeInOut,
-                                transform: _isHovering ? Matrix4.rotationZ(0.1) : Matrix4.rotationZ(0),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                      color: const Color(0xE7E7E7E7),
-                                      borderRadius: BorderRadius.circular(3),
-                                    // boxShadow: [
-                                    //   boxShadow(),
-                                    // ],
-                                  ),
-                                  margin: const EdgeInsets.only(right: 10),
-                                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
-                                  child: Text(e, style: const TextStyle(
-                                      fontSize: 14, color: Colors.black54, fontWeight: FontWeight.bold
-                                  )),
-                                ),
+                        Wrap(
+                          runSpacing: 10,
+                          children: list.map((e) => AnimatedContainer(
+                            duration: const Duration(milliseconds: 200),
+                            curve: Curves.easeInOut,
+                            transform: _isHovering ? Matrix4.rotationZ(0.1) : Matrix4.rotationZ(0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                color: Colors.blue,
+                                borderRadius: BorderRadius.circular(80),
                               ),
-                            )).toList(),
-                          ),
+                              margin: const EdgeInsets.only(right: 10),
+                              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+                              child: Text(e, style: const TextStyle(
+                                  fontSize: 14, color: Colors.white
+                              )),
+                            ),
+                          )).toList(),
                         ),
+
+                        // StatefulBuilder(
+                        //   builder: (context, setState)=> Wrap(
+                        //     runSpacing: 10,
+                        //     children: list.map((e) => MouseRegion(
+                        //       onEnter: (event) => setState(() => _isHovering = true),
+                        //       onExit: (event) => setState(() => _isHovering = false),
+                        //       child: AnimatedContainer(
+                        //         duration: const Duration(milliseconds: 200),
+                        //         curve: Curves.easeInOut,
+                        //         transform: _isHovering ? Matrix4.rotationZ(0.1) : Matrix4.rotationZ(0),
+                        //         child: Container(
+                        //           decoration: BoxDecoration(
+                        //               color: const Color(0xE7E7E7E7),
+                        //               borderRadius: BorderRadius.circular(3),
+                        //             // boxShadow: [
+                        //             //   boxShadow(),
+                        //             // ],
+                        //           ),
+                        //           margin: const EdgeInsets.only(right: 10),
+                        //           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+                        //           child: Text(e, style: const TextStyle(
+                        //               fontSize: 14, color: Colors.black54, fontWeight: FontWeight.bold
+                        //           )),
+                        //         ),
+                        //       ),
+                        //     )).toList(),
+                        //   ),
+                        // ),
 
                         const SizedBox(height: 80),
 
@@ -237,15 +258,12 @@ class About extends StatelessWidget {
             runSpacing: 10,
             children: list.map((e) => Container(
               decoration: BoxDecoration(
-                  // boxShadow: [
-                  //   boxShadow(),
-                  // ],
-                  color: const Color(0xE7E7E7E7),
-                  borderRadius: BorderRadius.circular(3)),
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(80)),
               margin: const EdgeInsets.only(right: 10),
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
               child: Text(e, style: const TextStyle(
-                  fontSize: 14, color: Colors.black54, fontWeight: FontWeight.bold
+                  fontSize: 14, color: Colors.white
               )),
             )).toList(),
           ),
