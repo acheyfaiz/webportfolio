@@ -91,7 +91,7 @@ class MyCustomScrollBehavior extends MaterialScrollBehavior {
 
 /*
  STEPS TO DEPLOY FLUTTER WEB HOSTING
-  1- run flutter build web (flutter build web --dart-define=FLUTTER_WEB_USE_SKIA=true --release)
+  1- run flutter build web (flutter build web --dart-define=FLUTTER_WEB_USE_SKIA=true --release --no-tree-shake-icons
      run sudo npm install -g firebase-tools
      run firebase login
   2- run firebase init
