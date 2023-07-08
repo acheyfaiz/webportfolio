@@ -77,13 +77,12 @@ class About extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
 
-                          Container(
+                          SizedBox(
                             height: size.height / 2,
                             width: size.width / 4,
-                            color: Colors.black54,
                             child: const Image(
-                              fit: BoxFit.cover,
-                              image: AssetImage("images/profile-picture.jpg"),
+                              fit: BoxFit.contain,
+                              image: AssetImage("images/faiz-black.jpg"),
                             ),
                           ),
 
@@ -226,13 +225,12 @@ class About extends StatelessWidget {
 
           const SizedBox(height: 50),
 
-          Container(
+          SizedBox(
             height: size.height / 2,
             width: size.width,
-            color: Colors.black54,
             child: const Image(
-              fit: BoxFit.cover,
-              image: AssetImage("images/profile-picture.jpg"),
+              fit: BoxFit.contain,
+              image: AssetImage("images/faiz-black.jpg"),
             ),
           ),
 
