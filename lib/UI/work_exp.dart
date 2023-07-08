@@ -13,7 +13,7 @@ class WorkExperience extends StatelessWidget {
       TimelineExp(title: "Big Data Technology Sdn Bhd", desc: "Role: Programmer (Internship Trainee)", time: "Aug 2019 - Jan 2020"),
 
     ];
-    final Size size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.sizeOf(context);
     return Container(
       color: Colors.grey[50],
       width: size.width,

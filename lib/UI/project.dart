@@ -100,7 +100,7 @@ class Project extends StatelessWidget {
   }
 
   Widget _web(context, List<ProjectDetail> project){
-    final Size size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.sizeOf(context);
     return ColoredBox(
       color: Colors.white,
       child: SizedBox(
@@ -237,7 +237,7 @@ class Project extends StatelessWidget {
   }
 
   Widget _mobile(context, List<ProjectDetail> project){
-    final Size size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.sizeOf(context);
     return ColoredBox(
       color: Colors.white,
       child: SizedBox(
@@ -354,7 +354,7 @@ class ProjectImages extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.sizeOf(context);
     return Container(
       height: size.height / 2,
       color: Colors.black54,

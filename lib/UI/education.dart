@@ -15,7 +15,7 @@ class Education extends StatelessWidget {
       TimelineExp(title: "SMK Bandar Baru Bangi", desc: "Sijil Pelajaran Malaysia (SPM)", time: "2010 - 2014"),
 
     ];
-    final Size size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.sizeOf(context);
     return Container(
       color: Colors.grey[100],
       width: size.width,

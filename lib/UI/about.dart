@@ -27,7 +27,7 @@ class About extends StatelessWidget {
 
   final bool _isHovering = false;
   Widget _web(context, List list){
-    final Size size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.sizeOf(context);
     return Container(
       color: Colors.grey[50],
       width: size.width,
@@ -194,7 +194,7 @@ class About extends StatelessWidget {
   }
 
   Widget _mobile(context, List list){
-    final Size size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.sizeOf(context);
     return Container(
       color: Colors.grey[50],
       width: size.width,

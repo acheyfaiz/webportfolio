@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "655448867197",
+    "project_id": "viewtofaizdesk",
+    "storage_bucket": "viewtofaizdesk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:655448867197:android:3f984a332828754f8c0c14",
+        "android_client_info": {
+          "package_name": "com.mhdfaiz.portfolio.portfolio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "655448867197-hrh5tphbp80e50dlk8q5uc5qdc2hcauu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA14QgPal3M5N8YQsP-AKZrYTIOEscS5UA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "655448867197-hrh5tphbp80e50dlk8q5uc5qdc2hcauu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

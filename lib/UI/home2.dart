@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/UI/connect.dart';
@@ -17,6 +18,21 @@ class Home2 extends StatefulWidget {
 }
 
 class _Home2State extends State<Home2> {
+
+  FirebaseAnalytics analytics = FirebaseAnalytics.instance;
+
+  _get(){
+    analytics.logAppOpen(
+      callOptions: AnalyticsCallOptions(global: true)
+    );
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _get();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +101,7 @@ class BodyContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
+    final Size size = MediaQuery.sizeOf(context);
     return Column(
       children: [
 
