@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -59,8 +58,8 @@ class Project extends StatelessWidget {
           image4: "images/bizappshop4.png",
           image5: "images/bizappshop5.png",
           image6: "images/bizappshop6.png",
-          urlAndroid: "https://play.google.com/store/apps/details?id=com.bizapp_pos",
-          urlios: "https://apps.apple.com/us/app/bizappos/id1638684895"),
+          urlAndroid: "https://www.bizappshop.my/alyaxstore",
+          urlios: "https://www.bizappshop.my/alyaxstore"),
 
       ProjectDetail(
           title: "Quranly",
@@ -203,25 +202,8 @@ class Project extends StatelessWidget {
                             )),
 
                             const SizedBox(height: 40),
-                            
-                            MaterialButton(
-                                onPressed: (){
-                                  e.title == "Bizapp X" ? GoRouter.of(context).push('/bizappx') :
-                                  e.title == "Bizappay" ? GoRouter.of(context).push('/bizappay') :
-                                  e.title == "Bizappos" ? GoRouter.of(context).push('/bizappos') :
-                                  e.title == "Quranly" ? GoRouter.of(context).push('/quranly') :
-                                  e.title == "Aware" ? GoRouter.of(context).push('/aware') : _showpopup(context);
-                                },
-                              color: Colors.blue[400],
-                              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(80), // <-- Radius
-                              ),
-                              elevation: 1,
-                              child: const Text("View Case Study", style: TextStyle(
-                                  fontSize: 13, color: Colors.white,
-                              )),
-                            ),
+
+                            _buttonCaseStudy(context, e),
 
                             const SizedBox(height: 20),
 
@@ -325,24 +307,7 @@ class Project extends StatelessWidget {
 
                   const SizedBox(height: 40),
 
-                  MaterialButton(
-                    onPressed: (){
-                      e.title == "Bizapp X" ? GoRouter.of(context).push('/bizappx') :
-                      e.title == "Bizappay" ? GoRouter.of(context).push('/bizappay') :
-                      e.title == "Bizappos" ? GoRouter.of(context).push('/bizappos') :
-                      e.title == "Quranly" ? GoRouter.of(context).push('/quranly') :
-                      e.title == "Aware" ? GoRouter.of(context).push('/aware') : _showpopup(context);
-                    },
-                    color: Colors.blue[400],
-                    padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(80), // <-- Radius
-                    ),
-                    elevation: 1,
-                    child: const Text("View Case Study", style: TextStyle(
-                      fontSize: 13, color: Colors.white,
-                    )),
-                  ),
+                  _buttonCaseStudy(context, e),
 
                   const SizedBox(height: 40),
 
@@ -360,6 +325,30 @@ class Project extends StatelessWidget {
 
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  _buttonCaseStudy(context, ProjectDetail e){
+    return InkWell(
+      onTap: (){
+        e.title == "Bizapp X" ? GoRouter.of(context).push('/bizappx') :
+        e.title == "Bizappay" ? GoRouter.of(context).push('/bizappay') :
+        e.title == "Bizappos" ? GoRouter.of(context).push('/bizappos') :
+        e.title == "Quranly" ? GoRouter.of(context).push('/quranly') :
+        e.title == "Aware" ? GoRouter.of(context).push('/aware') : _showpopup(context);
+      },
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+            color: Colors.blue[400],
+            borderRadius: BorderRadius.circular(80)
+        ),
+        child: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+          child: Text("View Case Study", style: TextStyle(
+              fontSize: 13, color: Colors.white
+          )),
         ),
       ),
     );

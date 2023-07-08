@@ -8,72 +8,140 @@ import 'home.dart';
 class ConstantsWidget {
 
   /// constant widget for popup case study
-  MaterialButton closepopup(context){
-    return MaterialButton(
-      padding: const EdgeInsets.symmetric(horizontal: 83),
-      hoverColor: Colors.blue[400],
-
-      // onPressed: ()=> GoRouter.of(context).pop(true),
-      onPressed: ()=> GoRouter.of(context).push("/"),
-      height: 50,
-      color: Responsive.isLargeScreen(context) ? Colors.grey[200] : Colors.blue[400],
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(80)),
-      child: Text("Go Back", style: TextStyle(
-          fontSize: 13, color: Responsive.isSmallScreen(context) ? Colors.white : Colors.black
-      )),
+  Widget closepopup(context){
+    return InkWell(
+      onTap: (){
+        GoRouter.of(context).push("/");
+      },
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+            color: Responsive.isLargeScreen(context) ? Colors.grey[200] : Colors.blue[400],
+            borderRadius: BorderRadius.circular(80)
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 13),
+          child: Text("Go Back", style: TextStyle(
+              fontSize: 13, color: Responsive.isSmallScreen(context) ? Colors.white : Colors.black
+          )),
+        ),
+      ),
     );
+    // return MaterialButton(
+    //   padding: const EdgeInsets.symmetric(horizontal: 83),
+    //   hoverColor: Colors.blue[400],
+    //
+    //   // onPressed: ()=> GoRouter.of(context).pop(true),
+    //   onPressed: ()=> GoRouter.of(context).push("/"),
+    //   height: 50,
+    //   color: Responsive.isLargeScreen(context) ? Colors.grey[200] : Colors.blue[400],
+    //   shape: RoundedRectangleBorder(
+    //       borderRadius: BorderRadius.circular(80)),
+    //   child: Text("Go Back", style: TextStyle(
+    //       fontSize: 13, color: Responsive.isSmallScreen(context) ? Colors.white : Colors.black
+    //   )),
+    // );
   }
 
-  MaterialButton buttonAndroidpopup(context, {required String url}){
-    return MaterialButton(
-      padding: const EdgeInsets.symmetric(horizontal: 40),
-      hoverColor: const Color(0xff2FD37D),
-      onPressed: (){
+  Widget buttonAndroidpopup(context, {required String url}){
+    return InkWell(
+      onTap: (){
         html.window.open(url, "_blank");
       },
-      height: 50,
-      color: Responsive.isLargeScreen(context) ? Colors.grey[200] : const Color(0xff2FD37D),
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(80)),
-      child: const Text("Download for Android", style: TextStyle(
-          fontSize: 13, color: Colors.black
-      )),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+            color: Responsive.isLargeScreen(context) ? Colors.grey[200] : const Color(0xff2FD37D),
+            borderRadius: BorderRadius.circular(80)
+        ),
+        child: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 13),
+          child: Text("Download for Android", style: TextStyle(
+              fontSize: 13, color: Colors.black
+          )),
+        ),
+      ),
     );
+    // return MaterialButton(
+    //   padding: const EdgeInsets.symmetric(horizontal: 40),
+    //   hoverColor: const Color(0xff2FD37D),
+    //   onPressed: (){
+    //     html.window.open(url, "_blank");
+    //   },
+    //   height: 50,
+    //   color: Responsive.isLargeScreen(context) ? Colors.grey[200] : const Color(0xff2FD37D),
+    //   shape: RoundedRectangleBorder(
+    //       borderRadius: BorderRadius.circular(80)),
+    //   child: const Text("Download for Android", style: TextStyle(
+    //       fontSize: 13, color: Colors.black
+    //   )),
+    // );
   }
 
-  MaterialButton buttonIospopup(context, {required String url}){
-    return  MaterialButton(
-      padding: const EdgeInsets.symmetric(horizontal: 55),
-      hoverColor: const Color(0xffD6D6D6),
-      onPressed: (){
-        html.window.open(url,"_blank");
+  Widget buttonIospopup(context, {required String url}){
+    return InkWell(
+      onTap: (){
+        html.window.open(url, "_blank");
       },
-      height: 50,
-      color: Colors.grey[200],
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(80)),
-      child: const Text("Download for iOS", style: TextStyle(
-          fontSize: 13, color: Colors.black
-      )),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+            color: Colors.grey[200],
+            borderRadius: BorderRadius.circular(80)
+        ),
+        child: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 13),
+          child: Text("Download for iOS", style: TextStyle(
+              fontSize: 13, color: Colors.black
+          )),
+        ),
+      ),
     );
+    // return MaterialButton(
+    //   padding: const EdgeInsets.symmetric(horizontal: 55),
+    //   hoverColor: const Color(0xffD6D6D6),
+    //   onPressed: (){
+    //     html.window.open(url,"_blank");
+    //   },
+    //   height: 50,
+    //   color: Colors.grey[200],
+    //   shape: RoundedRectangleBorder(
+    //       borderRadius: BorderRadius.circular(80)),
+    //   child: const Text("Download for iOS", style: TextStyle(
+    //       fontSize: 13, color: Colors.black
+    //   )),
+    // );
   }
 
-  MaterialButton buttonwebpopup(context, {required String url}){
-    return MaterialButton(
-      padding: const EdgeInsets.symmetric(horizontal: 65),
-      hoverColor: const Color(0xffD6D6D6),
-      onPressed: (){
-        html.window.open(url,"_blank");
+  Widget buttonwebpopup(context, {required String url}){
+    return InkWell(
+      onTap: (){
+        html.window.open(url, "_blank");
       },
-      height: 50,
-      color: Colors.grey[200],
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(80)),
-      child: const Text("Go to website", style: TextStyle(
-          fontSize: 13, color: Colors.black
-      )),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+            color: Colors.grey[200],
+            borderRadius: BorderRadius.circular(80)
+        ),
+        child: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 13),
+          child: Text("Go to website", style: TextStyle(
+              fontSize: 13, color: Colors.black
+          )),
+        ),
+      ),
     );
+    // return MaterialButton(
+    //   padding: const EdgeInsets.symmetric(horizontal: 65),
+    //   hoverColor: const Color(0xffD6D6D6),
+    //   onPressed: (){
+    //     html.window.open(url,"_blank");
+    //   },
+    //   height: 50,
+    //   color: Colors.grey[200],
+    //   shape: RoundedRectangleBorder(
+    //       borderRadius: BorderRadius.circular(80)),
+    //   child: const Text("Go to website", style: TextStyle(
+    //       fontSize: 13, color: Colors.black
+    //   )),
+    // );
   }
 
   Text roletext(){
