@@ -45,37 +45,73 @@ class Connect extends StatelessWidget {
             child: Wrap(
               runSpacing: 20,
               children: [
-                MaterialButton(
-                  padding: const EdgeInsets.symmetric(horizontal: 80),
-                  hoverColor: const Color(0xff0072b1).withOpacity(.3),
-                  onPressed: (){
+                // MaterialButton(
+                //   padding: const EdgeInsets.symmetric(horizontal: 80),
+                //   hoverColor: const Color(0xff0072b1).withOpacity(.3),
+                //   onPressed: (){
+                //     html.window.open("https://www.linkedin.com/in/muhdfaizz/", "_blank");
+                //   },
+                //   height: 50,
+                //   color: const Color(0xff0072b1),
+                //   shape: RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(80)),
+                //   child: const Text("Linkedin", style: TextStyle(
+                //       fontSize: 13, color: Colors.white
+                //   )),
+                // ),
+
+                InkWell(
+                  onTap: (){
                     html.window.open("https://www.linkedin.com/in/muhdfaizz/", "_blank");
                   },
-                  height: 50,
-                  color: const Color(0xff0072b1),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(80)),
-                  child: const Text("Linkedin", style: TextStyle(
-                      fontSize: 13, color: Colors.white
-                  )),
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      color: const Color(0xff0072b1),
+                      borderRadius: BorderRadius.circular(80)
+                    ),
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 80, vertical: 12),
+                      child: Text("Linkedin", style: TextStyle(
+                          fontSize: 13, color: Colors.white
+                      )),
+                    ),
+                  ),
                 ),
 
                 const SizedBox(width: 50),
 
-                MaterialButton(
-                  padding: const EdgeInsets.symmetric(horizontal: 85),
-                  hoverColor: const Color(0xffD6D6D6),
-                  onPressed: (){
+                InkWell(
+                  onTap: (){
                     html.window.open("mailto:mhdxfaiz@gmail.com", "_blank");
                   },
-                  height: 50,
-                  color: Colors.grey[200],
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(80)),
-                  child: const Text("E-mail", style: TextStyle(
-                      fontSize: 13, color: Colors.black
-                  )),
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                        color: Colors.grey[200],
+                        borderRadius: BorderRadius.circular(80)
+                    ),
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 80, vertical: 12),
+                      child: Text("E-mail", style: TextStyle(
+                          fontSize: 13, color: Colors.black
+                      )),
+                    ),
+                  ),
                 ),
+
+                // MaterialButton(
+                //   padding: const EdgeInsets.symmetric(horizontal: 85),
+                //   hoverColor: const Color(0xffD6D6D6),
+                //   onPressed: (){
+                //     html.window.open("mailto:mhdxfaiz@gmail.com", "_blank");
+                //   },
+                //   height: 50,
+                //   color: Colors.grey[200],
+                //   shape: RoundedRectangleBorder(
+                //       borderRadius: BorderRadius.circular(80)),
+                //   child: const Text("E-mail", style: TextStyle(
+                //       fontSize: 13, color: Colors.black
+                //   )),
+                // ),
               ],
             ),
           ),

@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -46,6 +47,18 @@ class Project extends StatelessWidget {
           image4: "images/bizappos4.jpg",
           image5: "images/bizappos5.jpg",
           image6: "images/bizappos5.jpg",
+          urlAndroid: "https://play.google.com/store/apps/details?id=com.bizapp_pos",
+          urlios: "https://apps.apple.com/us/app/bizappos/id1638684895"),
+
+      ProjectDetail(
+          title: "Bizappshop (Minishop)",
+          desc: "Online shop for your business. Simple and elegant",
+          image: "images/bizappshop1.png",
+          image2: "",
+          image3: "images/bizappshop3.png",
+          image4: "images/bizappshop4.png",
+          image5: "images/bizappshop5.png",
+          image6: "images/bizappshop6.png",
           urlAndroid: "https://play.google.com/store/apps/details?id=com.bizapp_pos",
           urlios: "https://apps.apple.com/us/app/bizappos/id1638684895"),
 
@@ -147,19 +160,23 @@ class Project extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Container(
-                            height: size.height / 2,
-                            color: Colors.black54,
-                            child: Image(
-                              image: AssetImage(e.image),
+                          SizedBox(
+                            height: e.title.contains("Bizappshop") ? size.height / 3 : size.height / 2,
+                            child: Align(
+                              alignment: Alignment.centerRight,
+                              child: Image(
+                                image: AssetImage(e.image),
+                              ),
                             ),
                           ),
                           const SizedBox(width: 20),
-                          Container(
+                          e.image2 == "" ? const SizedBox() : SizedBox(
                             height: size.height / 2,
-                            color: Colors.black54,
-                            child: Image(
-                              image: AssetImage(e.image2),
+                            child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: Image(
+                                image: AssetImage(e.image2),
+                              ),
                             ),
                           ),
                         ],
@@ -276,16 +293,18 @@ class Project extends StatelessWidget {
                   /// image
                   SizedBox(
                     width: size.width ,
-                    height: 500,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      shrinkWrap: true,
-                      physics: const BouncingScrollPhysics(),
-                      children: [
-                        ProjectImages(img: e.image),
-                        const SizedBox(width: 20),
-                        ProjectImages(img: e.image2),
-                      ]
+                    height: e.title.contains("Bizappshop") ? Responsive.isSmallScreen(context) ? 200 : 400 : 500,
+                    child: Center(
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        shrinkWrap: true,
+                        physics: const BouncingScrollPhysics(),
+                        children: [
+                          ProjectImages(img: e.image),
+                          e.image2 == "" ? const SizedBox() : const SizedBox(width: 20),
+                          e.image2 == "" ? const SizedBox() : ProjectImages(img: e.image2),
+                        ]
+                      ),
                     ),
                   ),
 
@@ -355,9 +374,8 @@ class ProjectImages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.sizeOf(context);
-    return Container(
+    return SizedBox(
       height: size.height / 2,
-      color: Colors.black54,
       child: Image(
         image: AssetImage(img),
       ),
