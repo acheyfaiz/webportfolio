@@ -123,14 +123,14 @@ class BodyContent extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
 
-                    Text("HEY, ANONYMOUS!", textAlign: TextAlign.center, style: GoogleFonts.poppins(
+                    Text("HEY !", textAlign: TextAlign.center, style: GoogleFonts.poppins(
                         fontSize: 35, fontWeight: FontWeight.w800
                     )),
 
                     const SizedBox(height: 20),
 
                     const Text("Are you ready to explore my portfolio?  Let's check it out!", textAlign: TextAlign.center, style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 17,
                     )),
 
                     const SizedBox(height: 40),
@@ -144,11 +144,11 @@ class BodyContent extends StatelessWidget {
 
         const About(),
 
+        const Project(),
+
         const Education(),
 
         const WorkExperience(),
-
-        const Project(),
 
         const Connect()
 

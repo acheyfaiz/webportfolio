@@ -16,6 +16,7 @@ class Project extends StatelessWidget {
           // desc: "Bizapp is an application available in Android, IOS and web platforms. Bizapp is utilised by online and offline businesses, basic agents, dropship agents, stockists and headquarters to manage order data. "
           //     "Any entreprenuers should engage with E-commerce or they will be left behind. Bizapp has a clear and easy interface that will make entreprenuers fell in love and help their business to grow.",
           desc: "BizApp X is a new-look BizApp application, which help you as agent or dropship to follow HQ/Stockist or monitor your sales",
+          role: "Lead Developer",
           image: "images/bizapp1.jpg",
           image2: "images/bizapp2.jpg",
           image3: "images/bizapp3.jpg",
@@ -28,6 +29,7 @@ class Project extends StatelessWidget {
       ProjectDetail(
           title: "Bizappay",
           desc: "Bizappay provides online payment platform services for businesses and individuals with a low charge rate. Create, track & record transaction in one web-mobile application system to empower your business with right tools to collect and record online payments.",
+          role: "Lead Developer",
           image: "images/bizappay1.jpg",
           image2: "images/bizappay2.jpg",
           image3: "images/bizappay3.jpg",
@@ -40,6 +42,7 @@ class Project extends StatelessWidget {
       ProjectDetail(
           title: "Bizappos",
           desc: "With various features and powerful devices, you can easily manage you Point-of-Sales (POS) and focus to expand your business.",
+          role: "Programmer",
           image: "images/bizappos1.jpg",
           image2: "images/bizappos2.jpg",
           image3: "images/bizappos3.jpg",
@@ -52,6 +55,7 @@ class Project extends StatelessWidget {
       ProjectDetail(
           title: "Bizappshop (Minishop)",
           desc: "Online shop for your business. Simple and elegant",
+          role: "Lead Developer",
           image: "images/bizappshop1.png",
           image2: "",
           image3: "images/bizappshop3.png",
@@ -64,6 +68,7 @@ class Project extends StatelessWidget {
       ProjectDetail(
           title: "Quranly",
           desc: "A habit-building Quran app that brings a habit-centered, routine-driven approach to Quran reading. It gives you a visual tracker representation of your daily progress to stay motivated to reach your goals. ",
+          role: "Programmer",
           image: "images/quranly1.jpg",
           image2: "images/quranly2.jpg",
           image3: "images/quranly3.jpg",
@@ -76,6 +81,7 @@ class Project extends StatelessWidget {
       ProjectDetail(
           title: "Aware",
           desc: "Aware Academy has been helping thousands of Muslims around the world combat porn addiction for the past 17 years",
+          role: "Programmer",
           image: "images/aware1.jpg",
           image2: "images/aware2.jpg",
           image3: "images/aware3.jpg",
@@ -201,7 +207,13 @@ class Project extends StatelessWidget {
                                 fontSize: 17
                             )),
 
-                            const SizedBox(height: 40),
+                            const SizedBox(height: 30),
+
+                            Text("Role: ${e.role}", style:const  TextStyle(
+                                fontSize: 16
+                            )),
+
+                            const SizedBox(height: 30),
 
                             _buttonCaseStudy(context, e),
 
@@ -305,7 +317,13 @@ class Project extends StatelessWidget {
                     )),
                   ),
 
-                  const SizedBox(height: 40),
+                  const SizedBox(height: 30),
+
+                  Text("Role: ${e.role}", style: const TextStyle(
+                      fontSize: 16
+                  )),
+
+                  const SizedBox(height: 30),
 
                   _buttonCaseStudy(context, e),
 
@@ -375,6 +393,7 @@ class ProjectImages extends StatelessWidget {
 class ProjectDetail{
 
   late String title;
+  late String role;
   late String desc;
   late String image;
   late String image2;
@@ -388,6 +407,7 @@ class ProjectDetail{
   ProjectDetail(
       {
         required this.title,
+        required this.role,
         required this.desc,
         required this.image,
         required this.image2,

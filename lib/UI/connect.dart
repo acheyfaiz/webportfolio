@@ -12,7 +12,7 @@ class Connect extends StatelessWidget {
     final Size size = MediaQuery.sizeOf(context);
 
     return Container(
-      color: Colors.grey[50],
+      color: Colors.grey[100],
       width: size.width,
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Column(
