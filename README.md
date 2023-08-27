@@ -1,17 +1,20 @@
-# portfolio
+# My Portfolio
 
-Landing page webportfolio
+This is my website portfolio to display everything about my current project and working experience. This website were build 100% using Flutter web.
 
 ## STEPS TO DEPLOY FLUTTER WEB HOSTING
-1. run flutter build web (flutter build web --dart-define=FLUTTER_WEB_USE_SKIA=true --release) --> for smooth experience
-2. run sudo npm install -g firebase-tools (if not install yet)
-3. run firebase login
-4. run firebase init
-5. pilih Y
-6. pilih features firebase mana nak pakai - so kita pilih hosting features
-7. .... public directory - tulis build/web
-8. single page app? N
-9. github? N
-10. override build/web file? N
-11. after firebase initialization complete, run firebase deploy
-12. tadaaa siap!
+Here are the simple steps to deploy and hosting your Flutter web to Firebase Hosting
+
+1. run 'flutter clean && flutter pub get'
+2. run 'flutter build web --dart-define=FLUTTER_WEB_USE_SKIA=true --release' for smooth experience
+3. run 'sudo npm install -g firebase-tools' (if not install yet)
+4. run 'firebase login' to login with you Firebase account
+5. run 'firebase init'
+6. select your Firebase project (for hosting) and Flutter project
+7. choose which features you want. Here we choose hosting features.
+8. ... public directory - Enter 'build/web'
+9. ... single page app? Enter N
+10. ... github? Enter N
+11. ... override build/web file? Enter N
+12. after Firebase initialization complete, run 'firebase deploy'
+13. completed. 
