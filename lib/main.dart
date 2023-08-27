@@ -57,37 +57,42 @@ class MyApp extends StatelessWidget {
         path: '/',
         name: 'home',
         builder: (context, state) => const Home(),
+        routes: [
+
+          GoRoute(
+            path: 'bizappx',
+            name: 'bizappx',
+            builder: (context, state) => const BizappProject(),
+          ),
+
+          GoRoute(
+            path: 'bizappay',
+            name: 'bizappay',
+            builder: (context, state) => const BizappayProject(),
+          ),
+
+          GoRoute(
+            path: 'bizappos',
+            name: 'bizappos',
+            builder: (context, state) => const BizapposProject(),
+          ),
+
+          GoRoute(
+            path: 'quranly',
+            name: 'quranly',
+            builder: (context, state) => const QuranlyProject(),
+          ),
+
+          GoRoute(
+            path: 'aware',
+            name: 'aware',
+            builder: (context, state) => const AwareProject(),
+          ),
+
+        ]
       ),
 
-      GoRoute(
-        path: '/bizappx',
-        name: 'bizappx',
-        builder: (context, state) => const BizappProject(),
-      ),
 
-      GoRoute(
-        path: '/bizappay',
-        name: 'bizappay',
-        builder: (context, state) => const BizappayProject(),
-      ),
-
-      GoRoute(
-        path: '/bizappos',
-        name: 'bizappos',
-        builder: (context, state) => const BizapposProject(),
-      ),
-
-      GoRoute(
-        path: '/quranly',
-        name: 'quranly',
-        builder: (context, state) => const QuranlyProject(),
-      ),
-
-      GoRoute(
-        path: '/aware',
-        name: 'aware',
-        builder: (context, state) => const AwareProject(),
-      ),
 
     ],
   );
