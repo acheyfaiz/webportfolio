@@ -15,8 +15,8 @@ class Footer extends StatelessWidget {
       child: ColoredBox(
         color: Colors.black,
         child: Padding(
-          padding: Responsive.isLargeScreen(context) ? const EdgeInsets.symmetric(horizontal: 140, vertical: 100)
-              : Responsive.isTabScreen(context) ? const EdgeInsets.symmetric(horizontal: 40, vertical: 100)
+          padding: Responsive.isLargeScreen(context) ? const EdgeInsets.symmetric(horizontal: 120, vertical: 100)
+              : Responsive.isTabScreen(context) ? const EdgeInsets.symmetric(horizontal: 30, vertical: 100)
               : const EdgeInsets.symmetric(horizontal: 5, vertical: 80),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -37,11 +37,11 @@ class Footer extends StatelessWidget {
               const SizedBox(height: 30),
 
               /// copyright text
-              /// (v1.7.2)
+              /// (v1.8.0)
               const Text("© Copyright 2023 handmade with Flutter 💙", textAlign: TextAlign.center, style: TextStyle(
                 color: Colors.white, fontSize: 12
               )),
-              const Text("Last updated: 01 August 2023", textAlign: TextAlign.center, style: TextStyle(
+              const Text("Last updated: 01 November 2023", textAlign: TextAlign.center, style: TextStyle(
                   color: Colors.white, fontSize: 11, fontStyle: FontStyle.italic
               ))
 
