@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/UI/Project/bizapp_project.dart';
 import 'package:portfolio/UI/constant.dart';
 import 'package:portfolio/UI/footer.dart';
@@ -55,29 +54,17 @@ class BizapposProject extends StatelessWidget {
                   const SizedBox(height: 30),
 
                   ConstantsWidget().prodetailtext(),
-                  Padding(
-                    padding: EdgeInsets.only(right: Responsive.isLargeScreen(context) ? 30 : 0),
-                    child: Text("BizApp POS is a Point-of-Sale focused app that are designed to help Ultimate & Privilege package users "
-                        "utilise our existing POS module from our website and allow them to connect with other "
-                        "POS related appliances such as cash drawers, thermal printers, and so on. This software is available either for your smartphone, tablet, desktop and coming soon to web version.",
-                        textAlign: TextAlign.justify, style: GoogleFonts.poppins(
-                            fontSize: 16
-                        )),
-                  ),
+                  ProjectDetailDesc(desc: ConstantsWidget.textBizappos),
                   const SizedBox(height: 40),
 
                   /// role
                   ConstantsWidget().roletext(),
-                  Text("Programmer", style: GoogleFonts.poppins(
-                      fontSize: 16, color: Colors.black54, fontWeight: FontWeight.w500
-                  )),
+                  const ProjectDetailAttribute(text: "Programmer"),
                   const SizedBox(height: 50),
 
                   /// tools
                   ConstantsWidget().toolstext(),
-                  Text("Flutter, Dart, Kotlin, Android Studio, RestAPI, Third party Integration, CI/CD Pipeline", style: GoogleFonts.poppins(
-                      fontSize: 16, color: Colors.black54, fontWeight: FontWeight.w500
-                  )),
+                  const ProjectDetailAttribute(text: "Flutter, Dart, Kotlin, Android Studio, RestAPI, Third party Integration, CI/CD Pipeline"),
                   const SizedBox(height: 50),
 
                   /// link
@@ -89,9 +76,9 @@ class BizapposProject extends StatelessWidget {
                     runSpacing: 10,
                     spacing: 10,
                     children: [
-                      ConstantsWidget().buttonAndroidpopup(context, url: "https://play.google.com/store/apps/details?id=com.bizapp_pos"),
-                      ConstantsWidget().buttonIospopup(context, url: "https://apps.apple.com/us/app/bizappos/id1638684895"),
-                      ConstantsWidget().buttonwebpopup(context, url: "https://www.bizappos.com"),
+                      ConstantsWidget().buttonAndroidpopup(context, url: ConstantsWidget.urlbizapposAndroid),
+                      ConstantsWidget().buttonIospopup(context, url: ConstantsWidget.urlbizapposiOS),
+                      ConstantsWidget().buttonwebpopup(context, url: ConstantsWidget.urlbizapposweb),
                       ConstantsWidget().closepopup(context),
                     ],
                   ),

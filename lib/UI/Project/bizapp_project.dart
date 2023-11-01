@@ -55,31 +55,17 @@ class BizappProject extends StatelessWidget {
                   const SizedBox(height: 30),
 
                   ConstantsWidget().prodetailtext(),
-                  Padding(
-                    padding: EdgeInsets.only(right: Responsive.isLargeScreen(context) ? 30 : 0),
-                    child: Text("Bizapp X is a revamp apps from existing app Bizapp v7. Bizapp is utilised by online and offline businesses to manage order data and sales. "
-                        "Nowadays any entreprenuers should engage with e-commerce or they will be left behind. Our target audience is dropship, agents, stockists and headquarters (HQ). "
-                        "Some of brand name that are using Bizapp is Simplysiti, Rizka, Byreefa and many more.\n\n"
-                        "During development, the challenges I face is to compute commission price for agents. In Bizapp, you can have up to 6 prices for your agents price. "
-                        "Futhermore, Bizapp also have complex structure and more than 20 module (features) for users to use.",
-                        textAlign: TextAlign.justify, style: GoogleFonts.poppins(
-                          fontSize: 16
-                        )),
-                  ),
+                  ProjectDetailDesc(desc: ConstantsWidget.textBizapp),
                   const SizedBox(height: 40),
 
                   /// role
                   ConstantsWidget().roletext(),
-                  Text("Lead Developer", style: GoogleFonts.poppins(
-                      fontSize: 16, color: Colors.black54, fontWeight: FontWeight.w500
-                  )),
+                  const ProjectDetailAttribute(text: "Lead Developer"),
                   const SizedBox(height: 50),
 
                   /// tools
                   ConstantsWidget().toolstext(),
-                  Text("Flutter (Provider State Management), Dart, Android Studio, RestAPI, CI/CD Pipeline", style: GoogleFonts.poppins(
-                      fontSize: 16, color: Colors.black54, fontWeight: FontWeight.w500
-                  )),
+                  const ProjectDetailAttribute(text: "Flutter (Provider State Management), Dart, Android Studio, RestAPI, CI/CD Pipeline"),
                   const SizedBox(height: 50),
 
                   /// link
@@ -91,9 +77,9 @@ class BizappProject extends StatelessWidget {
                     runSpacing: 10,
                     spacing: 10,
                     children: [
-                      ConstantsWidget().buttonAndroidpopup(context, url: "https://play.google.com/store/apps/details?id=com.bizapp.bizappx&hl=en"),
-                      ConstantsWidget().buttonIospopup(context, url: "https://apps.apple.com/my/app/bizapp-x/id1581323969"),
-                      ConstantsWidget().buttonwebpopup(context, url: "https://www.bizapp.com.my"),
+                      ConstantsWidget().buttonAndroidpopup(context, url: ConstantsWidget.urlbizappAndroid),
+                      ConstantsWidget().buttonIospopup(context, url: ConstantsWidget.urlbizappiOS),
+                      ConstantsWidget().buttonwebpopup(context, url: ConstantsWidget.urlbizappweb),
                       ConstantsWidget().closepopup(context),
                     ],
                   ),

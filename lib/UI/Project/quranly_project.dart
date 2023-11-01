@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/UI/Project/bizapp_project.dart';
 import 'package:portfolio/UI/footer.dart';
 import 'package:portfolio/UI/home.dart';
@@ -57,32 +56,17 @@ class QuranlyProject extends StatelessWidget {
                   const SizedBox(height: 30),
 
                   ConstantsWidget().prodetailtext(),
-                  Padding(
-                    padding: EdgeInsets.only(right: Responsive.isLargeScreen(context) ? 30 : 0),
-                    child: Text("The Quranly app is a comprehensive Islamic application that provides Muslims with an array of tools and resources to learn and practice their religion. "
-                        "The app includes a digital version of the Quran with multiple translations, a searchable database of Islamic texts and teachings, and various features to help users read and memorize the Quran. "
-                        "Futhermore, the app includes a prayer timetable, daily reminders to read and study the Quran, and a social network of like-minded individuals to share and discuss religious topics.\n\n"
-                        "The challeges to create this apps is to track user reading progress and store into local database by using SQlite software. The letter of huruf quran is quite different to display since the way of reading "
-                        "is from right-to-left.",
-
-                        textAlign: TextAlign.justify, style: GoogleFonts.poppins(
-                            fontSize: 16
-                        )),
-                  ),
+                  ProjectDetailDesc(desc: ConstantsWidget.textQuranly),
                   const SizedBox(height: 40),
 
                   /// role
                   ConstantsWidget().roletext(),
-                  Text("Programmer", style: GoogleFonts.poppins(
-                      fontSize: 16, color: Colors.black54, fontWeight: FontWeight.w500
-                  )),
+                  const ProjectDetailAttribute(text: "Programmer"),
                   const SizedBox(height: 50),
 
                   /// tools
                   ConstantsWidget().toolstext(),
-                  Text("Flutter (Provider State Management), Dart, Android Studio, SQLite, Figma/Adobe XD", style: GoogleFonts.poppins(
-                      fontSize: 16, color: Colors.black54, fontWeight: FontWeight.w500
-                  )),
+                  const ProjectDetailAttribute(text: "Flutter (Provider State Management), Dart, Android Studio, SQLite, Figma/Adobe XD"),
                   const SizedBox(height: 50),
 
                   /// link
@@ -94,8 +78,8 @@ class QuranlyProject extends StatelessWidget {
                     runSpacing: 10,
                     spacing: 10,
                     children: [
-                      ConstantsWidget().buttonAndroidpopup(context, url: "https://play.google.com/store/apps/details?id=com.quranly.app&hl=en&gl=US"),
-                      ConstantsWidget().buttonIospopup(context, url: "https://apps.apple.com/my/app/quranly/id1559233786"),
+                      ConstantsWidget().buttonAndroidpopup(context, url: ConstantsWidget.urlquranlyAndroid),
+                      ConstantsWidget().buttonIospopup(context, url: ConstantsWidget.urlquranlysiOS),
                       ConstantsWidget().closepopup(context),
                     ],
                   ),

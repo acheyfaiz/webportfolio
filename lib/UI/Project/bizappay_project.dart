@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/UI/Project/bizapp_project.dart';
 import 'package:portfolio/UI/footer.dart';
 import 'package:portfolio/UI/home.dart';
@@ -57,31 +56,17 @@ class BizappayProject extends StatelessWidget {
                   const SizedBox(height: 30),
 
                   ConstantsWidget().prodetailtext(),
-                  Padding(
-                    padding: EdgeInsets.only(right: Responsive.isLargeScreen(context) ? 30 : 0),
-                    child: Text("Bizappay is a online payment platform services for business and individual with a low rate charge. You can create, track and record transaction history "
-                        "in one web-mobile application system to empower your business with the right tools to collect and record online payments. Bizappay also provides real-time reporting and analytics, customizable payment pages, and fraud prevention measures.\n\n"
-                        "With current integration, Bizappay user have choices to choose payment method "
-                        "either via FPX online banking, Shoppepay and Grabpay. Users also can use local or foreign credit card for the same purpose too.",
-
-                        textAlign: TextAlign.justify, style: GoogleFonts.poppins(
-                            fontSize: 16
-                        )),
-                  ),
+                  ProjectDetailDesc(desc: ConstantsWidget.textBizappay),
                   const SizedBox(height: 40),
 
                   /// role
                   ConstantsWidget().roletext(),
-                  Text("Lead Developer", style: GoogleFonts.poppins(
-                      fontSize: 16, color: Colors.black54, fontWeight: FontWeight.w500
-                  )),
+                  const ProjectDetailAttribute(text: "Lead Developer"),
                   const SizedBox(height: 50),
 
                   /// tools
                   ConstantsWidget().toolstext(),
-                  Text("Flutter (Provider State Management), Dart, Android Studio, RestAPI", style: GoogleFonts.poppins(
-                      fontSize: 16, color: Colors.black54, fontWeight: FontWeight.w500
-                  )),
+                  const ProjectDetailAttribute(text: "Flutter (Provider State Management), Dart, Android Studio, RestAPI"),
                   const SizedBox(height: 50),
 
                   /// link
@@ -93,9 +78,9 @@ class BizappayProject extends StatelessWidget {
                     runSpacing: 10,
                     spacing: 10,
                     children: [
-                      ConstantsWidget().buttonAndroidpopup(context, url: "https://play.google.com/store/apps/details?id=com.bizapp.bizappay&hl=en&gl=US"),
-                      ConstantsWidget().buttonIospopup(context, url: "https://apps.apple.com/my/app/bizappay/id1525672898"),
-                      ConstantsWidget().buttonwebpopup(context, url: "https://www.bizappay.my"),
+                      ConstantsWidget().buttonAndroidpopup(context, url: ConstantsWidget.urlbizappayAndroid),
+                      ConstantsWidget().buttonIospopup(context, url: ConstantsWidget.urlbizappayiOS),
+                      ConstantsWidget().buttonwebpopup(context, url: ConstantsWidget.urlbizappayweb),
                       ConstantsWidget().closepopup(context),
                     ],
                   ),

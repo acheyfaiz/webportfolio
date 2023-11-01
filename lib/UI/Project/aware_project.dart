@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/UI/Project/bizapp_project.dart';
 import 'package:portfolio/UI/footer.dart';
 import 'package:portfolio/UI/home.dart';
@@ -57,29 +56,17 @@ class AwareProject extends StatelessWidget {
                   const SizedBox(height: 30),
 
                   ConstantsWidget().prodetailtext(),
-                  Padding(
-                    padding: EdgeInsets.only(right: Responsive.isLargeScreen(context) ? 30 : 0),
-                    child: Text("Aware apps is an apps that help you to free-porn addicted which offers mindfulness exercises and meditations to help users improve their mental health and reduce stress. "
-                        "This app is designed for people of all ages and backgrounds, with the aim of promoting better life, mental health and well-being.",
-
-                        textAlign: TextAlign.justify, style: GoogleFonts.poppins(
-                            fontSize: 16
-                        )),
-                  ),
+                  ProjectDetailDesc(desc: ConstantsWidget.textAware),
                   const SizedBox(height: 40),
 
                   /// role
                   ConstantsWidget().roletext(),
-                  Text("Programmer", style: GoogleFonts.poppins(
-                      fontSize: 16, color: Colors.black54, fontWeight: FontWeight.w500
-                  )),
+                  const ProjectDetailAttribute(text: "Programmer"),
                   const SizedBox(height: 50),
 
                   /// tools
                   ConstantsWidget().toolstext(),
-                  Text("Flutter (Provider State Management), Dart, Android Studio, SQLite, Figma/Adobe XD", style: GoogleFonts.poppins(
-                      fontSize: 16, color: Colors.black54, fontWeight: FontWeight.w500
-                  )),
+                  const ProjectDetailAttribute(text: "Flutter (Provider State Management), Dart, Android Studio, SQLite, Figma/Adobe XD"),
                   const SizedBox(height: 50),
 
                   /// link
@@ -91,9 +78,9 @@ class AwareProject extends StatelessWidget {
                     runSpacing: 10,
                     spacing: 10,
                     children: [
-                      ConstantsWidget().buttonAndroidpopup(context, url: "https://play.google.com/store/apps/details?id=au.com.awareacademy&hl=en&gl=US"),
-                      ConstantsWidget().buttonIospopup(context, url: "https://apps.apple.com/my/app/aware-academy/id1611163995"),
-                      ConstantsWidget().buttonwebpopup(context, url: "https://awareacademy.com.au/"),
+                      ConstantsWidget().buttonAndroidpopup(context, url: ConstantsWidget.urlawareAndroid),
+                      ConstantsWidget().buttonIospopup(context, url: ConstantsWidget.urlawareiOS),
+                      ConstantsWidget().buttonwebpopup(context, url: ConstantsWidget.urlawareweb),
                       ConstantsWidget().closepopup(context),
                     ],
                   ),
