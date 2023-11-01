@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/UI/project.dart';
 import 'dart:html' as html;
-
 import 'home.dart';
 
 class ConstantsWidget {
@@ -38,108 +38,6 @@ class ConstantsWidget {
     //       borderRadius: BorderRadius.circular(80)),
     //   child: Text("Go Back", style: TextStyle(
     //       fontSize: 13, color: Responsive.isSmallScreen(context) ? Colors.white : Colors.black
-    //   )),
-    // );
-  }
-
-  Widget buttonAndroidpopup(context, {required String url}){
-    return InkWell(
-      onTap: (){
-        html.window.open(url, "_blank");
-      },
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-            color: Responsive.isLargeScreen(context) ? Colors.grey[200] : const Color(0xff2FD37D),
-            borderRadius: BorderRadius.circular(80)
-        ),
-        child: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 13),
-          child: Text("Download for Android", style: TextStyle(
-              fontSize: 13, color: Colors.black
-          )),
-        ),
-      ),
-    );
-    // return MaterialButton(
-    //   padding: const EdgeInsets.symmetric(horizontal: 40),
-    //   hoverColor: const Color(0xff2FD37D),
-    //   onPressed: (){
-    //     html.window.open(url, "_blank");
-    //   },
-    //   height: 50,
-    //   color: Responsive.isLargeScreen(context) ? Colors.grey[200] : const Color(0xff2FD37D),
-    //   shape: RoundedRectangleBorder(
-    //       borderRadius: BorderRadius.circular(80)),
-    //   child: const Text("Download for Android", style: TextStyle(
-    //       fontSize: 13, color: Colors.black
-    //   )),
-    // );
-  }
-
-  Widget buttonIospopup(context, {required String url}){
-    return InkWell(
-      onTap: (){
-        html.window.open(url, "_blank");
-      },
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-            color: Colors.grey[200],
-            borderRadius: BorderRadius.circular(80)
-        ),
-        child: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 13),
-          child: Text("Download for iOS", style: TextStyle(
-              fontSize: 13, color: Colors.black
-          )),
-        ),
-      ),
-    );
-    // return MaterialButton(
-    //   padding: const EdgeInsets.symmetric(horizontal: 55),
-    //   hoverColor: const Color(0xffD6D6D6),
-    //   onPressed: (){
-    //     html.window.open(url,"_blank");
-    //   },
-    //   height: 50,
-    //   color: Colors.grey[200],
-    //   shape: RoundedRectangleBorder(
-    //       borderRadius: BorderRadius.circular(80)),
-    //   child: const Text("Download for iOS", style: TextStyle(
-    //       fontSize: 13, color: Colors.black
-    //   )),
-    // );
-  }
-
-  Widget buttonwebpopup(context, {required String url}){
-    return InkWell(
-      onTap: (){
-        html.window.open(url, "_blank");
-      },
-      child: DecoratedBox(
-        decoration: BoxDecoration(
-            color: Colors.grey[200],
-            borderRadius: BorderRadius.circular(80)
-        ),
-        child: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 13),
-          child: Text("Go to website", style: TextStyle(
-              fontSize: 13, color: Colors.black
-          )),
-        ),
-      ),
-    );
-    // return MaterialButton(
-    //   padding: const EdgeInsets.symmetric(horizontal: 65),
-    //   hoverColor: const Color(0xffD6D6D6),
-    //   onPressed: (){
-    //     html.window.open(url,"_blank");
-    //   },
-    //   height: 50,
-    //   color: Colors.grey[200],
-    //   shape: RoundedRectangleBorder(
-    //       borderRadius: BorderRadius.circular(80)),
-    //   child: const Text("Go to website", style: TextStyle(
-    //       fontSize: 13, color: Colors.black
     //   )),
     // );
   }
@@ -198,6 +96,9 @@ class ConstantsWidget {
   static String urlbizapposiOS = "https://apps.apple.com/us/app/bizappos/id1638684895";
   static String urlbizapposweb = "https://www.bizappos.com";
 
+  /// url bizappshop
+  static String urlbizappshop = "https://www.bizappshop.my";
+
   /// url quranly
   static String urlquranlyAndroid = "https://play.google.com/store/apps/details?id=com.quranly.app&hl=en&gl=US";
   static String urlquranlysiOS = "https://apps.apple.com/my/app/quranly/id1559233786";
@@ -226,6 +127,7 @@ class ProjectDetailDesc extends StatelessWidget {
   }
 }
 
+/// for project detail attribute
 class ProjectDetailAttribute extends StatelessWidget {
   final String text;
   const ProjectDetailAttribute({super.key, required this.text});
@@ -237,4 +139,108 @@ class ProjectDetailAttribute extends StatelessWidget {
     ));
   }
 }
+
+/// for project detail images
+class ProjectDetailImages extends StatelessWidget {
+  final List images;
+  const ProjectDetailImages({super.key, required this.images});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: SizedBox(
+        height: Responsive.isLargeScreen(context) ? 400 : 350,
+        child: ListView(
+          scrollDirection: Axis.horizontal,
+          shrinkWrap: true,
+          physics: const BouncingScrollPhysics(),
+          children: images.map((e) => Container(
+              margin: const EdgeInsets.only(right: 15),
+              child: ProjectImages(img: e))).toList(),
+        ),
+      ),
+    );
+  }
+}
+
+class ProjectButtonAndroid extends StatelessWidget {
+  final String url;
+  const ProjectButtonAndroid({super.key, required this.url});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: (){
+        html.window.open(url, "_blank");
+      },
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+            color: Responsive.isLargeScreen(context) ? Colors.grey[200] : const Color(0xff2FD37D),
+            borderRadius: BorderRadius.circular(80)
+        ),
+        child: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 13),
+          child: Text("Download for Android", style: TextStyle(
+              fontSize: 13, color: Colors.black
+          )),
+        ),
+      ),
+    );
+  }
+}
+
+class ProjectButtoniOS extends StatelessWidget {
+  final String url;
+  const ProjectButtoniOS({super.key, required this.url});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: (){
+        html.window.open(url, "_blank");
+      },
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+            color: Colors.grey[200],
+            borderRadius: BorderRadius.circular(80)
+        ),
+        child: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 13),
+          child: Text("Download for iOS", style: TextStyle(
+              fontSize: 13, color: Colors.black
+          )),
+        ),
+      ),
+    );
+  }
+}
+
+class ProjectButtonWeb extends StatelessWidget {
+  final String url;
+  const ProjectButtonWeb({super.key, required this.url});
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: (){
+        html.window.open(url, "_blank");
+      },
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+            color: Colors.grey[200],
+            borderRadius: BorderRadius.circular(80)
+        ),
+        child: const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 40, vertical: 13),
+          child: Text("Go to website", style: TextStyle(
+              fontSize: 13, color: Colors.black
+          )),
+        ),
+      ),
+    );
+  }
+}
+
+
+
 

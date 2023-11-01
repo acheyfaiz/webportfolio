@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/UI/constant.dart';
 import 'package:portfolio/UI/footer.dart';
 import 'package:portfolio/UI/home.dart';
-import 'package:portfolio/UI/project.dart';
 
 class BizappProject extends StatelessWidget {
   const BizappProject({Key? key}) : super(key: key);
@@ -31,19 +30,7 @@ class BizappProject extends StatelessWidget {
             const SizedBox(height: 50),
 
             /// images
-            Center(
-              child: SizedBox(
-                height: Responsive.isLargeScreen(context) ? 400 : 350,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  shrinkWrap: true,
-                  physics: const BouncingScrollPhysics(),
-                  children: images.map((e) => Container(
-                      margin: const EdgeInsets.only(right: 15),
-                      child: ProjectImages(img: e))).toList(),
-                ),
-              ),
-            ),
+            ProjectDetailImages(images: images),
             const SizedBox(height: 30),
 
             Padding(
@@ -77,10 +64,12 @@ class BizappProject extends StatelessWidget {
                     runSpacing: 10,
                     spacing: 10,
                     children: [
-                      ConstantsWidget().buttonAndroidpopup(context, url: ConstantsWidget.urlbizappAndroid),
-                      ConstantsWidget().buttonIospopup(context, url: ConstantsWidget.urlbizappiOS),
-                      ConstantsWidget().buttonwebpopup(context, url: ConstantsWidget.urlbizappweb),
+
+                      ProjectButtonAndroid(url: ConstantsWidget.urlbizappAndroid),
+                      ProjectButtoniOS(url: ConstantsWidget.urlbizappiOS),
+                      ProjectButtonWeb(url: ConstantsWidget.urlbizappweb),
                       ConstantsWidget().closepopup(context),
+
                     ],
                   ),
                 ],
