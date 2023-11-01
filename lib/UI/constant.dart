@@ -75,6 +75,9 @@ class ConstantsWidget {
   static String textBizappos = '''BizApp POS is a Point-of-Sale focused app that are designed to help Ultimate & Privilege package users utilise our existing POS module from our website and allow them to connect with other POS related appliances such as cash drawers, thermal printers, and so on. This software is available either for your smartphone, tablet, desktop and coming soon to web version.
   ''';
 
+  static String textBizappshop = '''Bizappshop is a mini e-commerce website for user who doesn't have budget to build their own website. Additional affiliate features that also help HQ/Seller boosting their sales by sharing same link to their agent or dropship.
+  ''';
+
   static String textAware = '''Aware apps is an apps that help you to free-porn addicted which offers mindfulness exercises and meditations to help users improve their mental health and reduce stress. This app is designed for people of all ages and backgrounds, with the aim of promoting better life, mental health and well-being.
   ''';
 
@@ -163,6 +166,7 @@ class ProjectDetailImages extends StatelessWidget {
   }
 }
 
+/// for project detail android button
 class ProjectButtonAndroid extends StatelessWidget {
   final String url;
   const ProjectButtonAndroid({super.key, required this.url});
@@ -189,6 +193,7 @@ class ProjectButtonAndroid extends StatelessWidget {
   }
 }
 
+/// for project detail ios button
 class ProjectButtoniOS extends StatelessWidget {
   final String url;
   const ProjectButtoniOS({super.key, required this.url});
@@ -215,6 +220,7 @@ class ProjectButtoniOS extends StatelessWidget {
   }
 }
 
+/// for project detail web button
 class ProjectButtonWeb extends StatelessWidget {
   final String url;
   const ProjectButtonWeb({super.key, required this.url});

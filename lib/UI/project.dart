@@ -353,6 +353,7 @@ class Project extends StatelessWidget {
       onTap: (){
         e.title == "Bizapp X" ? GoRouter.of(context).push('/bizappx') :
         e.title == "Bizappay" ? GoRouter.of(context).push('/bizappay') :
+        e.title == "Bizappshop (Minishop)" ? GoRouter.of(context).push('/bizappshop') :
         e.title == "Bizappos" ? GoRouter.of(context).push('/bizappos') :
         e.title == "Quranly" ? GoRouter.of(context).push('/quranly') :
         e.title == "Aware" ? GoRouter.of(context).push('/aware') : _showpopup(context);

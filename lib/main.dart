@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/UI/Project/aware_project.dart';
 import 'package:portfolio/UI/Project/bizapp_project.dart';
 import 'package:portfolio/UI/Project/bizappay_project.dart';
+import 'package:portfolio/UI/Project/bizappshop_project.dart';
 import 'package:portfolio/UI/Project/quranly_project.dart';
 import 'package:portfolio/UI/home.dart';
 import 'package:flutter/gestures.dart';
@@ -72,6 +73,12 @@ class MyApp extends StatelessWidget {
           ),
 
           GoRoute(
+            path: 'bizappshop',
+            name: 'bizappshop',
+            builder: (context, state) => const BizappshopProject(),
+          ),
+
+          GoRoute(
             path: 'bizappos',
             name: 'bizappos',
             builder: (context, state) => const BizapposProject(),
@@ -91,8 +98,6 @@ class MyApp extends StatelessWidget {
 
         ]
       ),
-
-
 
     ],
   );
