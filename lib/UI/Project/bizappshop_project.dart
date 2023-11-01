@@ -10,12 +10,12 @@ class BizappshopProject extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<String> images = [
-      "images/bizapp1.jpg",
-      "images/bizapp2.jpg",
-      "images/bizapp3.jpg",
-      "images/bizapp4.jpg",
-      "images/bizapp5.jpg",
-      "images/bizapp6.jpg",
+      "images/bizappshop1.png",
+      "images/bizappshop2.png",
+      "images/bizappshop3.png",
+      "images/bizappshop4.png",
+      "images/bizappshop5.png",
+      "images/bizappshop6.png",
     ];
 
     return Scaffold(

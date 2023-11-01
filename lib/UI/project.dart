@@ -13,8 +13,6 @@ class Project extends StatelessWidget {
 
       ProjectDetail(
           title: "Bizapp X",
-          // desc: "Bizapp is an application available in Android, IOS and web platforms. Bizapp is utilised by online and offline businesses, basic agents, dropship agents, stockists and headquarters to manage order data. "
-          //     "Any entreprenuers should engage with E-commerce or they will be left behind. Bizapp has a clear and easy interface that will make entreprenuers fell in love and help their business to grow.",
           desc: "BizApp X is a new-look BizApp application, which help you as agent or dropship to follow HQ/Stockist or monitor your sales",
           role: "Lead Developer",
           image: "images/bizapp1.jpg",
@@ -23,8 +21,7 @@ class Project extends StatelessWidget {
           image4: "images/bizapp4.jpg",
           image5: "images/bizapp5.jpg",
           image6: "images/bizapp6.jpg",
-          urlAndroid: "https://play.google.com/store/apps/details?id=com.bizapp.bizappx&hl=en",
-          urlios: "https://apps.apple.com/my/app/bizapp-x/id1581323969"),
+          ),
 
       ProjectDetail(
           title: "Bizappay",
@@ -36,8 +33,7 @@ class Project extends StatelessWidget {
           image4: "images/bizappay4.jpg",
           image5: "images/bizappay5.jpg",
           image6: "images/bizappay6.jpg",
-          urlAndroid: "https://play.google.com/store/apps/details?id=com.bizapp.bizappay&hl=en&gl=US",
-          urlios: "https://apps.apple.com/my/app/bizappay/id1525672898"),
+          ),
 
       ProjectDetail(
           title: "Bizappos",
@@ -49,12 +45,11 @@ class Project extends StatelessWidget {
           image4: "images/bizappos4.jpg",
           image5: "images/bizappos5.jpg",
           image6: "images/bizappos5.jpg",
-          urlAndroid: "https://play.google.com/store/apps/details?id=com.bizapp_pos",
-          urlios: "https://apps.apple.com/us/app/bizappos/id1638684895"),
+          ),
 
       ProjectDetail(
           title: "Bizappshop (Minishop)",
-          desc: "Online shop for your business. Simple and elegant",
+          desc: "Your online shop for your business. Simple and elegant",
           role: "Lead Developer",
           image: "images/bizappshop1.png",
           image2: "",
@@ -62,8 +57,7 @@ class Project extends StatelessWidget {
           image4: "images/bizappshop4.png",
           image5: "images/bizappshop5.png",
           image6: "images/bizappshop6.png",
-          urlAndroid: "https://www.bizappshop.my/alyaxstore",
-          urlios: "https://www.bizappshop.my/alyaxstore"),
+          ),
 
       ProjectDetail(
           title: "Quranly",
@@ -75,8 +69,7 @@ class Project extends StatelessWidget {
           image4: "images/quranly4.jpg",
           image5: "images/quranly5.jpg",
           image6: "images/quranly6.jpg",
-          urlAndroid: "https://play.google.com/store/apps/details?id=com.quranly.app&hl=en&gl=US",
-          urlios: "https://apps.apple.com/my/app/quranly/id1559233786"),
+          ),
 
       ProjectDetail(
           title: "Aware",
@@ -88,8 +81,7 @@ class Project extends StatelessWidget {
           image4: "images/aware4.jpg",
           image5: "images/aware5.jpg",
           image6: "images/aware6.jpg",
-          urlAndroid: "https://play.google.com/store/apps/details?id=au.com.awareacademy&hl=en&gl=US",
-          urlios: "https://apps.apple.com/my/app/aware-academy/id1611163995"),
+      ),
 
     ];
 
@@ -402,8 +394,6 @@ class ProjectDetail{
   late String image4;
   late String image5;
   late String image6;
-  late String urlAndroid;
-  late String urlios;
 
   ProjectDetail(
       {
@@ -416,7 +406,5 @@ class ProjectDetail{
         required this.image4,
         required this.image5,
         required this.image6,
-        required this.urlAndroid,
-        required this.urlios
       });
 }

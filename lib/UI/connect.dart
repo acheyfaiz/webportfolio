@@ -68,11 +68,31 @@ class Connect extends StatelessWidget {
 
                 InkWell(
                   onTap: (){
+                    html.window.open("https://www.linkedin.com/in/muhdfaizz/", "_blank");
+                  },
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(80)
+                    ),
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 70, vertical: 12),
+                      child: Text("Resume/CV", style: TextStyle(
+                          fontSize: 13, color: Colors.white
+                      )),
+                    ),
+                  ),
+                ),
+
+                const SizedBox(width: 50),
+
+                InkWell(
+                  onTap: (){
                     html.window.open("mailto:mhdxfaiz@gmail.com", "_blank");
                   },
                   child: DecoratedBox(
                     decoration: BoxDecoration(
-                        color: Colors.grey[200],
+                        color: Colors.grey[300],
                         borderRadius: BorderRadius.circular(80)
                     ),
                     child: const Padding(
