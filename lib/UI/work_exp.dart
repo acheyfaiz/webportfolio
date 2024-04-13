@@ -9,8 +9,9 @@ class WorkExperience extends StatelessWidget {
   Widget build(BuildContext context) {
     List<TimelineExp> explist = [
 
-      TimelineExp(title: "Bizapp Ventures Sdn Bhd", desc: "Role: Mobile Apps Developer", time: "Mac 2020 - Present"),
-      TimelineExp(title: "Big Data Technology Sdn Bhd", desc: "Role: Programmer (Internship Trainee)", time: "Aug 2019 - Jan 2020"),
+      TimelineExp(title: "Hayat Technologies Sdn Bhd", desc: "Executive Flutter Developer", time: "Mac 2024 - Present"),
+      TimelineExp(title: "Bizapp Ventures Sdn Bhd", desc: "Mobile Apps Developer", time: "Mac 2020 - Feb 2024"),
+      TimelineExp(title: "Big Data Technology Sdn Bhd", desc: "Programmer (Internship Trainee)", time: "Aug 2019 - Jan 2020"),
 
     ];
     final Size size = MediaQuery.sizeOf(context);
