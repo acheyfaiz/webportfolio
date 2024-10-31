@@ -146,9 +146,9 @@ class BodyContent extends StatelessWidget {
 
         const Project(),
 
-        const Education(),
-
         const WorkExperience(),
+
+        const Education(),
 
         const Connect()
 

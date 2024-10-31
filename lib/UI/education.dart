@@ -17,7 +17,7 @@ class Education extends StatelessWidget {
     ];
     final Size size = MediaQuery.sizeOf(context);
     return Container(
-      color: Colors.grey[100],
+      color: Colors.grey[50],
       width: size.width,
       child: Column(
         mainAxisSize: MainAxisSize.min,
